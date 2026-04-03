@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Pavilion 703 Guest Guide</title>
+  <style>
+    :root {
+      --bg: #f6fbfc;
+      --surface: #ffffff;
+      --surface-alt: #eef7f8;
+      --text: #16313a;
+      --muted: #5f7880;
+      --brand: #57b4cf;
+      --brand-dark: #2b8ba7;
+      --accent: #b1c84a;
+      --accent-dark: #8ea32d;
+      --border: #d9e7eb;
+      --shadow: 0 10px 30px rgba(22, 49, 58, 0.08);
+      --radius: 20px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f4fafb 0%, #eef6f7 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button {
+      font: inherit;
+      cursor: pointer;
+      border: 0;
+    }
+
+    .container {
+      width: min(calc(100% - 1.5rem), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 251, 252, 0.88);
+      border-bottom: 1px solid rgba(217, 231, 235, 0.85);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand-dark);
+      font-weight: 700;
+    }
+
+    .brand-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      padding: 0.35rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      background: var(--surface-alt);
+      color: var(--text);
+      outline: none;
+    }
+
+    .hero {
+      padding: 1rem 0 1.25rem;
+    }
+
+    .hero-card {
+      overflow: hidden;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at top right, rgba(177, 200, 74, 0.26), transparent 24%),
+        linear-gradient(140deg, rgba(87, 180, 207, 0.18), rgba(255,255,255,0.98) 42%, rgba(177, 200, 74, 0.10));
+      border: 1px solid rgba(217, 231, 235, 0.9);
+      box-shadow: var(--shadow);
+      padding: 1.25rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1;
+      margin-top: 0.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 56ch;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.9);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      min-height: 48px;
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: white;
+      box-shadow: 0 10px 18px rgba(87, 180, 207, 0.28);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .section {
+      padding: 0.9rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.35rem, 4vw, 2rem);
+      margin-bottom: 0.2rem;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .quick-grid,
+    .info-grid,
+    .gallery-grid,
+    .two-col,
+    .three-col {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card-soft {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fcfd 100%);
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-kicker {
+      display: inline-block;
+      margin-bottom: 0.55rem;
+      color: var(--brand-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card p,
+    .meta,
+    .list li,
+    .info-line {
+      color: var(--muted);
+    }
+
+    .value {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    .actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 0.9rem;
+    }
+
+    .fineprint {
+      margin-top: 0.7rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .notice {
+      background: #fffbe9;
+      border: 1px solid #efe2a8;
+      color: #6b6228;
+      padding: 0.85rem 0.95rem;
+      border-radius: 16px;
+      font-size: 0.95rem;
+    }
+
+    .quick-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+
+    .quick-link:hover .icon-bubble,
+    .quick-link:focus-visible .icon-bubble {
+      transform: scale(1.04);
+      outline: none;
+    }
+
+    .icon-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, rgba(87, 180, 207, 0.18), rgba(177, 200, 74, 0.14));
+      font-size: 1.45rem;
+      margin-bottom: 0.85rem;
+      transition: transform 0.15s ease;
+    }
+
+    .list {
+      padding-left: 1rem;
+      margin: 0.65rem 0 0;
+    }
+
+    .list li + li { margin-top: 0.45rem; }
+
+    .split-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 0.45rem;
+      font-size: 0.95rem;
+    }
+
+    .rule-list,
+    .details-list {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.85rem;
+    }
+
+    .rule-item,
+    .detail-item {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 0.85rem 0.95rem;
+      background: #fbfdfe;
+    }
+
+    .rule-label,
+    .detail-label {
+      font-weight: 800;
+      margin-bottom: 0.18rem;
+    }
+
+    .place-card {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      border-radius: 999px;
+      background: rgba(177, 200, 74, 0.18);
+      color: var(--accent-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.35rem 0.6rem;
+    }
+
+    .photo-frame {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, rgba(87, 180, 207, 0.15), rgba(177, 200, 74, 0.18));
+      position: relative;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 1rem;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .footer {
+      padding: 1rem 0 2.5rem;
+    }
+
+    .footer-card {
+      display: grid;
+      gap: 0.9rem;
+      align-items: start;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    dialog {
+      width: min(calc(100% - 1.5rem), 420px);
+      border: 0;
+      padding: 0;
+      border-radius: 24px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
+    }
+
+    dialog::backdrop {
+      background: rgba(8, 20, 24, 0.52);
+      backdrop-filter: blur(3px);
+    }
+
+    .modal-inner {
+      padding: 1.15rem;
+      background: white;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .close-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+
+    .qr-wrap {
+      display: grid;
+      place-items: center;
+      padding: 0.75rem;
+      border-radius: 18px;
+      background: #f8fbfc;
+      border: 1px solid var(--border);
+      margin: 1rem 0;
+    }
+
+    #wifiQr {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1rem;
+      transform: translateX(-50%) translateY(20px);
+      background: #183741;
+      color: white;
+      padding: 0.85rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 18px 40px rgba(24, 55, 65, 0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      font-weight: 700;
+      z-index: 200;
+      text-align: center;
+      max-width: calc(100% - 2rem);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (min-width: 720px) {
+      .nav-links { display: flex; }
+      .hero-card { padding: 1.5rem; }
+      .hero-grid { grid-template-columns: 1.3fr 0.9fr; align-items: center; }
+      .quick-grid { grid-template-columns: repeat(3, 1fr); }
+      .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .two-col { grid-template-columns: repeat(2, 1fr); }
+      .three-col { grid-template-columns: repeat(3, 1fr); }
+      .footer-card { grid-template-columns: 1.2fr 0.8fr; }
+    }
+
+    @media (min-width: 980px) {
+      .quick-grid { grid-template-columns: repeat(6, 1fr); }
+      .info-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand-block">
+        <span class="eyebrow">Guest Guide</span>
+        <span class="brand-title">Pavilion 703</span>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#wifi">Wi-Fi</a>
+        <a href="#stay">Stay Info</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#local">Local Tips</a>
+        <a href="#emergency">Emergency</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Welcome</span>
+              <h1>Pavilion 703</h1>
+              <p>Everything your guests need in one place: Wi-Fi, arrival info, condo tips, local recommendations, and emergency contacts. Built to work well on mobile inside the condo.</p>
+              <div class="pill-row">
+                <span class="pill">📶 Fast Wi-Fi</span>
+                <span class="pill">🛏 1 Bedroom</span>
+                <span class="pill">🚿 2 Bathrooms</span>
+                <span class="pill">📍 Zona Romántica</span>
+              </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#wifi">Connect to Wi-Fi</a>
+                <a class="btn btn-secondary" href="#local">Explore local tips</a>
+              </div>
+            </div>
+            <div class="card card-soft">
+              <span class="card-kicker">Quick stay facts</span>
+              <div class="split-line"><strong>Check-in</strong><span>3:00 PM</span></div>
+              <div class="split-line"><strong>Check-out</strong><span>11:00 AM</span></div>
+              <div class="split-line"><strong>Guests</strong><span>Up to 2</span></div>
+              <div class="split-line"><strong>Host</strong><span>Elisa</span></div>
+              <div class="actions-row">
+                <a class="btn btn-secondary" href="tel:+523221068996">Call Host</a>
+                <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Host</a>
+              </div>
+              <p class="fineprint">Tip: keep this page open on cellular when arriving, then connect to condo Wi-Fi once you are inside.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quick-actions">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Quick actions</h2>
+            <p class="section-subtitle">Put the most-used guest tasks first so nobody has to hunt through a binder.</p>
+          </div>
+        </div>
+        <div class="grid quick-grid">
+          <div class="card">
+            <a class="quick-link" href="#wifi">
+              <div class="icon-bubble">📶</div>
+              <div class="card-title">Wi-Fi</div>
+              <p>View the network name, password, copy button, and QR code.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a class="quick-link" href="#stay">
+              <div class="icon-bubble">🔑</div>
+              <div class="card-title">Arrival & stay</div>
+              <p>Entry notes, check-in and check-out, and common info.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a class="quick-link" href="#amenities">
+              <div class="icon-bubble">🏠</div>
+              <div class="card-title">Amenities</div>
+              <p>TV, Sonos, coffee station, kitchen, and condo basics.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a class="quick-link" href="#local">
+              <div class="icon-bubble">📍</div>
+              <div class="card-title">Local tips</div>
+              <p>Groceries, markets, beaches, bars, and shopping.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a class="quick-link" href="#emergency">
+              <div class="icon-bubble">🏥</div>
+              <div class="card-title">Emergency</div>
+              <p>Hospitals, dental care, and urgent contact info.</p>
+            </a>
+          </div>
+          <div class="card">
+            <a class="quick-link" href="#contact">
+              <div class="icon-bubble">💬</div>
+              <div class="card-title">Contact</div>
+              <p>Reach the host fast by phone or email.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="wifi">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Condo Wi-Fi</h2>
+            <p class="section-subtitle">This section is optimized for guests arriving with cellular service, then connecting once they are inside the condo.</p>
+          </div>
+        </div>
+
+        <div class="grid two-col">
+          <article class="card">
+            <span class="card-kicker">Private condo network</span>
+            <div class="card-title">703 Pavilion WiFi</div>
+            <p class="fineprint" style="margin-top:0;">Use this once you are inside the condo.</p>
+
+            <div class="details-list">
+              <div class="detail-item">
+                <div class="detail-label">Network name</div>
+                <div class="value" id="ssidText">703 Pavilion WiFi</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Password</div>
+                <div class="value" id="passwordText">Pv703!Thx4Staying</div>
+              </div>
+            </div>
+
+            <div class="actions-row">
+              <button class="btn btn-primary" id="copyPasswordBtn" type="button">Copy password</button>
+              <button class="btn btn-secondary" id="showQrBtn" type="button">Show Wi-Fi QR</button>
+            </div>
+
+            <div class="notice" style="margin-top:1rem;">
+              If this guide is open on the same phone you want to connect, copying the password is usually easiest. The QR code is best when viewed on one device and scanned with another.
+            </div>
+          </article>
+
+          <article class="card card-soft">
+            <span class="card-kicker">Connection help</span>
+            <div class="card-title">How guests should connect</div>
+            <ul class="list">
+              <li>Open this guide on cellular before entering the condo.</li>
+              <li>Once inside, connect to <strong>703 Pavilion WiFi</strong>.</li>
+              <li>Tap <strong>Copy password</strong> and paste it into Wi-Fi settings.</li>
+              <li>Or tap <strong>Show Wi-Fi QR</strong> and scan it from another device.</li>
+            </ul>
+            <p class="fineprint">Later, you can add an amenity photo here that shows where the router or mesh point is located if guests ever need it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stay">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Arrival & stay information</h2>
+            <p class="section-subtitle">Keep sensitive access details on a separate protected page if you do not want them broadly exposed.</p>
+          </div>
+        </div>
+
+        <div class="grid info-grid">
+          <article class="card">
+            <span class="card-kicker">Check-in</span>
+            <div class="card-title">Arrival</div>
+            <div class="value">3:00 PM</div>
+            <p class="fineprint">Add custom notes for building entry, front desk instructions, or how to collect keys if needed.</p>
+          </article>
+          <article class="card">
+            <span class="card-kicker">Check-out</span>
+            <div class="card-title">Departure</div>
+            <div class="value">11:00 AM</div>
+            <p class="fineprint">You can replace this with an easy checklist: lock doors, return fobs, turn off A/C, and take out trash.</p>
+          </article>
+          <article class="card">
+            <span class="card-kicker">Visitors</span>
+            <div class="card-title">Guest policy</div>
+            <div class="value">Max 2 visitors</div>
+            <p class="fineprint">Visitors must leave ID at the front desk. No visitors permitted after 10:00 PM.</p>
+          </article>
+        </div>
+
+        <div class="grid two-col" style="margin-top:1rem;">
+          <article class="card">
+            <span class="card-kicker">General condo info</span>
+            <div class="card-title">Good to know</div>
+            <div class="rule-list">
+              <div class="rule-item">
+                <div class="rule-label">Filtered water</div>
+                <div class="meta">Tap water from the kitchen is filtered.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Coffee & tea</div>
+                <div class="meta">Set out for guests at arrival.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Trash</div>
+                <div class="meta">Place bagged trash in the chute by the elevator.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Smoking</div>
+                <div class="meta">Allowed only on the rooftop near the jacuzzi, never on the balcony.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-soft">
+            <span class="card-kicker">Getting around</span>
+            <div class="card-title">Transportation basics</div>
+            <div class="rule-list">
+              <div class="rule-item">
+                <div class="rule-label">Currency</div>
+                <div class="meta">Mexican pesos are the local currency, though USD and CAD are often accepted.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Buses</div>
+                <div class="meta">An affordable way to get around. You can add current fare details if you want.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Uber & taxis</div>
+                <div class="meta">Uber is available. Taxis are plentiful; paying in pesos is usually easiest.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Food delivery</div>
+                <div class="meta">Uber Eats and Rappi are good options to include.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="amenities">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Amenities & how-to guides</h2>
+            <p class="section-subtitle">This is where photos become really useful. Add simple reference images for items guests often ask about.</p>
+          </div>
+        </div>
+
+        <div class="grid three-col gallery-grid">
+          <article class="card">
+            <span class="card-kicker">Audio</span>
+            <div class="card-title">Sonos system</div>
+            <div class="photo-frame">
+              <div class="photo-placeholder">Add a photo of the Sonos speaker or controller area here</div>
+            </div>
+            <p class="fineprint">Include quick instructions: open the Sonos app, select the speaker, adjust volume, and group rooms if applicable.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-kicker">TV</span>
+            <div class="card-title">Roku players</div>
+            <div class="photo-frame">
+              <div class="photo-placeholder">Add a photo of the remote and TV input setup here</div>
+            </div>
+            <p class="fineprint">Useful details: which remote controls power, how to reach Roku home, and how to switch inputs.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-kicker">Kitchen</span>
+            <div class="card-title">Coffee station</div>
+            <div class="photo-frame">
+              <div class="photo-placeholder">Add a photo of the coffee maker, filters, and supplies here</div>
+            </div>
+            <p class="fineprint">Great place for notes on where mugs, coffee, tea, sweetener, and extra supplies are stored.</p>
+          </article>
+        </div>
+
+        <div class="grid two-col" style="margin-top:1rem;">
+          <article class="card">
+            <span class="card-kicker">Condo overview</span>
+            <div class="card-title">What’s included</div>
+            <ul class="list">
+              <li>King-size bed</li>
+              <li>Queen-size sofa sleeper</li>
+              <li>Two full bathrooms</li>
+              <li>Smart TV with streaming</li>
+              <li>Fully equipped kitchen</li>
+              <li>Private balcony</li>
+            </ul>
+          </article>
+          <article class="card card-soft">
+            <span class="card-kicker">Owner note</span>
+            <div class="card-title">Future photo gallery</div>
+            <p>You can eventually swap these placeholders for real images like:</p>
+            <ul class="list">
+              <li><code>/images/sonos.jpg</code></li>
+              <li><code>/images/roku-living-room.jpg</code></li>
+              <li><code>/images/coffee-station.jpg</code></li>
+              <li><code>/images/ac-remote.jpg</code></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="local">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Local recommendations</h2>
+            <p class="section-subtitle">These should eventually link straight into Google Maps, Apple Maps, or a curated shared map.</p>
+          </div>
+        </div>
+
+        <div class="grid three-col">
+          <article class="card place-card">
+            <span class="badge">🛒 Groceries</span>
+            <div class="card-title">Near the condo</div>
+            <p>Mercado Ollin, Old Market, and Oxxo are good quick-stop options close by.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🏬 Shopping</span>
+            <div class="card-title">Malls & centers</div>
+            <p>La Isla, Galerías, and Plaza Caracol can each get their own map link and hours.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🥬 Markets</span>
+            <div class="card-title">Local mercados</div>
+            <p>Great section for fresh produce, neighborhood shopping, and local flavor.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🌮 Food</span>
+            <div class="card-title">Restaurants & taco stands</div>
+            <p>Create a hand-picked list instead of a giant directory. A short owner-curated list works better.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🍸 Nightlife</span>
+            <div class="card-title">Bars & clubs</div>
+            <p>Perfect for a curated “walkable from the condo” section.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🏖️ Explore</span>
+            <div class="card-title">Beaches & activities</div>
+            <p>Beaches, hiking, tours, and other favorite recommendations can live here.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="#">Add map link</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="emergency">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Emergency & medical info</h2>
+            <p class="section-subtitle">Phone numbers are tap-to-call. Review and update these periodically.</p>
+          </div>
+        </div>
+
+        <div class="grid three-col">
+          <article class="card">
+            <span class="card-kicker">Medical</span>
+            <div class="card-title">Joya Medical Group</div>
+            <p class="info-line">Venustiano Carranza #268</p>
+            <p class="info-line">24-hour walk-in emergency clinic</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="tel:+523226887334">Call</a>
+            </div>
+          </article>
+          <article class="card">
+            <span class="card-kicker">Hospital</span>
+            <div class="card-title">Hospital CMQ City Center</div>
+            <p class="info-line">Basilio Badillo #365</p>
+            <p class="info-line">24-hour walk-in emergency clinic</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="tel:+523222231919">Call</a>
+            </div>
+          </article>
+          <article class="card">
+            <span class="card-kicker">Dental</span>
+            <div class="card-title">Just Smiles Dental</div>
+            <p class="info-line">Basilio Badillo #311</p>
+            <p class="info-line">9:00 AM – 8:00 PM</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="tel:+523222230505">Call</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="card footer-card">
+        <div>
+          <span class="card-kicker">Contact</span>
+          <div class="card-title">Need help during your stay?</div>
+          <p class="small">For urgent condo issues, questions about amenities, or anything else, contact the host directly.</p>
+          <div class="actions-row">
+            <a class="btn btn-primary" href="tel:+523221068996">Call Elisa</a>
+            <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Elisa</a>
+          </div>
+        </div>
+        <div>
+          <div class="rule-list">
+            <div class="rule-item">
+              <div class="rule-label">Host</div>
+              <div class="meta">Elisa</div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-label">Phone</div>
+              <div class="meta">+52 322 106 8996</div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-label">Email</div>
+              <div class="meta">elisa@lifestylepropertiespv.com</div>
+            </div>
+            <div class="rule-item">
+              <div class="rule-label">Last updated</div>
+              <div class="meta">Replace with your date when you publish</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="qrDialog" aria-labelledby="qrTitle">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div>
+          <div class="card-title" id="qrTitle">Wi-Fi QR code</div>
+          <p class="small">Best when viewed on one device and scanned with another.</p>
+        </div>
+        <button class="close-btn" id="closeQrBtn" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="qr-wrap">
+        <div id="wifiQr" aria-label="Wi-Fi QR code"></div>
+      </div>
+      <p class="small">Network: <strong>703 Pavilion WiFi</strong><br/>Password: <strong>Pv703!Thx4Staying</strong></p>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    const wifi = {
+      ssid: '703 Pavilion WiFi',
+      password: 'Pv703!Thx4Staying',
+      qr: 'WIFI:T:WPA;S:703 Pavilion WiFi;P:Pv703!Thx4Staying;;'
+    };
+
+    const copyPasswordBtn = document.getElementById('copyPasswordBtn');
+    const showQrBtn = document.getElementById('showQrBtn');
+    const closeQrBtn = document.getElementById('closeQrBtn');
+    const qrDialog = document.getElementById('qrDialog');
+    const qrTarget = document.getElementById('wifiQr');
+    const toast = document.getElementById('toast');
+
+    let qrRendered = false;
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2400);
+    }
+
+    async function copyPassword() {
+      try {
+        await navigator.clipboard.writeText(wifi.password);
+        showToast('Wi-Fi password copied');
+      } catch (error) {
+        const fallback = document.createElement('textarea');
+        fallback.value = wifi.password;
+        document.body.appendChild(fallback);
+        fallback.select();
+        document.execCommand('copy');
+        fallback.remove();
+        showToast('Wi-Fi password copied');
+      }
+    }
+
+    function openQr() {
+      if (!qrRendered && window.QRCode) {
+        new QRCode(qrTarget, {
+          text: wifi.qr,
+          width: 220,
+          height: 220,
+          correctLevel: QRCode.CorrectLevel.M
+        });
+        qrRendered = true;
+      }
+      qrDialog.showModal();
+    }
+
+    copyPasswordBtn.addEventListener('click', copyPassword);
+    showQrBtn.addEventListener('click', openQr);
+    closeQrBtn.addEventListener('click', () => qrDialog.close());
+
+    qrDialog.addEventListener('click', (event) => {
+      const rect = qrDialog.getBoundingClientRect();
+      const clickedInDialog = (
+        rect.top <= event.clientY &&
+        event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX &&
+        event.clientX <= rect.left + rect.width
+      );
+      if (!clickedInDialog) qrDialog.close();
+    });
+  </script>
+</body>
+</html>
