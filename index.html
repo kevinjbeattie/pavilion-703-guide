@@ -374,6 +374,21 @@
       padding: 0.35rem 0.6rem;
     }
 
+    .subsection-head {
+      margin: 1.2rem 0 0.8rem;
+    }
+
+    .subsection-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.2rem;
+    }
+
+    .subsection-copy {
+      color: var(--muted);
+      max-width: 68ch;
+    }
+
     .photo-frame {
       aspect-ratio: 4 / 3;
       width: 100%;
@@ -519,7 +534,7 @@
         <a href="#wifi">Wi-Fi</a>
         <a href="#stay">Stay Info</a>
         <a href="#amenities">Amenities</a>
-        <a href="#local">Local Tips</a>
+        <a href="#local">Explore PV</a>
         <a href="#emergency">Emergency</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -543,7 +558,7 @@
               </div>
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#wifi">Connect to Wi-Fi</a>
-                <a class="btn btn-secondary" href="#local">Explore local tips</a>
+                <a class="btn btn-secondary" href="#local">Explore Puerto Vallarta</a>
               </div>
             </div>
             <div class="card card-soft">
@@ -596,8 +611,8 @@
           <div class="card">
             <a class="quick-link" href="#local">
               <div class="icon-bubble">📍</div>
-              <div class="card-title">Local tips</div>
-              <p>Groceries, markets, beaches, bars, and shopping.</p>
+              <div class="card-title">Explore PV</div>
+              <p>Curated beach, shopping, nightlife, and neighborhood recommendations.</p>
             </a>
           </div>
           <div class="card">
@@ -819,58 +834,187 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Local recommendations</h2>
-            <p class="section-subtitle">These should eventually link straight into Google Maps, Apple Maps, or a curated shared map.</p>
+            <h2 class="section-title">Explore Puerto Vallarta</h2>
+            <p class="section-subtitle">These recommendations are personally curated to help guests settle in quickly, explore confidently, and enjoy the neighborhood without information overload.</p>
           </div>
+        </div>
+
+        <div class="subsection-head">
+          <div class="subsection-title">General favorites</div>
+          <p class="subsection-copy">Start guests with the easy wins: groceries, beach time, and practical shopping. These are the places most people ask about first.</p>
         </div>
 
         <div class="grid three-col">
           <article class="card place-card">
             <span class="badge">🛒 Groceries</span>
             <div class="card-title">Near the condo</div>
-            <p>Mercado Ollin, Old Market, and Oxxo are good quick-stop options close by.</p>
+            <p>Mercado Ollin is the easiest polished grocery stop in Zona Romántica, and Oxxo is useful for quick basics, water, and late-night essentials.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mercado+Ollin+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Mercado Ollin</a>
+              <a class="btn btn-secondary" href="https://mercadoollin.com/" target="_blank" rel="noopener noreferrer">Market website</a>
             </div>
           </article>
           <article class="card place-card">
             <span class="badge">🏬 Shopping</span>
-            <div class="card-title">Malls & centers</div>
-            <p>La Isla, Galerías, and Plaza Caracol can each get their own map link and hours.</p>
+            <div class="card-title">Malls & essentials</div>
+            <p>For errands beyond the neighborhood, Plaza Caracol is a dependable all-purpose shopping stop with a wide mix of services and stores.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Plaza+Caracol+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Plaza Caracol</a>
+              <a class="btn btn-secondary" href="https://www.plazacaracol.mx/" target="_blank" rel="noopener noreferrer">Mall website</a>
             </div>
           </article>
           <article class="card place-card">
-            <span class="badge">🥬 Markets</span>
-            <div class="card-title">Local mercados</div>
-            <p>Great section for fresh produce, neighborhood shopping, and local flavor.</p>
+            <span class="badge">🏖️ Beach</span>
+            <div class="card-title">Los Muertos Beach & pier</div>
+            <p>The classic neighborhood beach: easy to walk to, lively all day, and a great anchor point for sunsets, water taxis, and people-watching.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Los+Muertos+Beach+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Los Muertos Beach</a>
+              <a class="btn btn-secondary" href="https://visitpuertovallarta.com/things-to-do/beaches/los-muertos-beach" target="_blank" rel="noopener noreferrer">Beach guide</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection-head">
+          <div class="subsection-title">Food & dining</div>
+          <p class="subsection-copy">Rather than listing everything nearby, this section highlights a few dependable choices across breakfast, tacos, and sunset dinner plans.</p>
+        </div>
+
+        <div class="grid three-col">
+          <article class="card place-card">
+            <span class="badge">☕ Breakfast</span>
+            <div class="card-title">La Chilaquer&iacute;a</div>
+            <p>A standout breakfast and brunch stop for guests who want something casual, flavorful, and distinctly local. A great first-morning recommendation.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/place/La+chilaqueria/@20.603508,-105.2398176,16z/data=!3m1!4b1!4m6!3m5!1s0x84214566e8f7a1c5:0x68caaa44fd69d13f!8m2!3d20.603503!4d-105.2372427!16s%2Fg%2F11nxsb3trj?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open La Chilaquer&iacute;a</a>
             </div>
           </article>
           <article class="card place-card">
-            <span class="badge">🌮 Food</span>
-            <div class="card-title">Restaurants & taco stands</div>
-            <p>Create a hand-picked list instead of a giant directory. A short owner-curated list works better.</p>
+            <span class="badge">✨ Elevated dining</span>
+            <div class="card-title">IC&Uacute;</div>
+            <p>One of the most memorable fine-dining experiences in Puerto Vallarta. Ideal for a special evening when guests want something polished, creative, and destination-worthy.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/place/IC%C3%9A/@20.6019591,-105.2401377,16z/data=!4m6!3m5!1s0x8421459f2249fbb1:0xd4fcc39b910aa093!8m2!3d20.6027409!4d-105.2366316!16s%2Fg%2F11hbbndg60?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open IC&Uacute;</a>
             </div>
           </article>
           <article class="card place-card">
-            <span class="badge">🍸 Nightlife</span>
-            <div class="card-title">Bars & clubs</div>
-            <p>Perfect for a curated “walkable from the condo” section.</p>
+            <span class="badge">🌅 Romantic dinner</span>
+            <div class="card-title">La Cappella</div>
+            <p>A classic choice for a more romantic night out, known for its atmosphere, live music, and memorable views. Best for guests planning a celebratory dinner.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/place/La+Cappella+Restaurante/@20.6037876,-105.2329005,16z/data=!4m6!3m5!1s0x8421454e5eb48f3d:0x5e698bcf65a2adb8!8m2!3d20.6078329!4d-105.2339494!16s%2Fg%2F11fzf9t_6h?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open La Cappella</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection-head">
+          <div class="subsection-title">Know before you go</div>
+          <p class="subsection-copy">A few practical notes go a long way in Puerto Vallarta, especially for first-time visitors staying in Zona Rom&aacute;ntica.</p>
+        </div>
+
+        <div class="grid two-col">
+          <article class="card">
+            <span class="card-kicker">Local tips</span>
+            <div class="card-title">Easy day-one advice</div>
+            <div class="rule-list">
+              <div class="rule-item">
+                <div class="rule-label">Very walkable</div>
+                <div class="meta">Zona Rom&aacute;ntica is easy to explore on foot, and many guests will not need a car at all.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Cobblestones & sidewalks</div>
+                <div class="meta">Street surfaces can be uneven and sidewalks narrow, so comfortable shoes are a smart call.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Cash helps</div>
+                <div class="meta">Cards are widely accepted, but pesos are useful for small shops, taxis, tips, and casual food stops.</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-soft">
+            <span class="card-kicker">Neighborhood rhythm</span>
+            <div class="card-title">What guests should expect</div>
+            <div class="rule-list">
+              <div class="rule-item">
+                <div class="rule-label">Street food can be great</div>
+                <div class="meta">Some of the best casual meals are neighborhood taco stands and market stops, especially in the evening.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Nightlife runs late</div>
+                <div class="meta">This area can stay lively into the night, so light sleepers may appreciate earplugs.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Local charm is real</div>
+                <div class="meta">Puerto Vallarta blends polished hospitality with a lived-in neighborhood feel, which is part of what makes it special.</div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection-head">
+          <div class="subsection-title">LGBTQ+ Puerto Vallarta</div>
+          <p class="subsection-copy">Zona Romántica is one of the most welcoming LGBTQ+ neighborhoods anywhere. These options keep the tone friendly and inclusive without turning the page into a nightlife directory.</p>
+        </div>
+
+        <div class="grid three-col">
+          <article class="card place-card">
+            <span class="badge">🌈 Beach club</span>
+            <div class="card-title">Mantamar</div>
+            <p>An adults-only beach club at the south end of Los Muertos Beach. Good for a polished beach day, cocktails, music, and a more social scene.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mantamar+Beach+Club+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Mantamar</a>
+              <a class="btn btn-secondary" href="https://www.mantamarvallarta.com/en" target="_blank" rel="noopener noreferrer">Club website</a>
             </div>
           </article>
           <article class="card place-card">
-            <span class="badge">🏖️ Explore</span>
-            <div class="card-title">Beaches & activities</div>
-            <p>Beaches, hiking, tours, and other favorite recommendations can live here.</p>
+            <span class="badge">🍹 Nightlife</span>
+            <div class="card-title">Mr. Flamingo</div>
+            <p>One of the neighborhood’s most recognizable corners for cocktails, music, and a lively mixed crowd. Great if guests want something energetic and easy to find.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="#">Add map link</a>
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mr.+Flamingo+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Mr. Flamingo</a>
+              <a class="btn btn-secondary" href="https://vallartahub.com/en/bars-and-nightclubs/mr-flamingo/" target="_blank" rel="noopener noreferrer">Venue details</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🎭 Shows</span>
+            <div class="card-title">Act2PV</div>
+            <p>For cabaret, theater, tribute shows, and piano-bar energy. A strong pick when guests want a fun night out that is more performance-forward than club-focused.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Act2PV+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open Act2PV</a>
+              <a class="btn btn-secondary" href="https://act2pv.com/" target="_blank" rel="noopener noreferrer">See shows</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="subsection-head">
+          <div class="subsection-title">Optional after-dark</div>
+          <p class="subsection-copy">This section is intentionally optional. It gives adult guests a discreet pointer if that is their scene, without making it the focus of the guide.</p>
+        </div>
+
+        <div class="grid three-col">
+          <article class="card place-card">
+            <span class="badge">🌙 Late night</span>
+            <div class="card-title">Street-to-street bar hopping</div>
+            <p>Many guests will have the best time simply walking Lázaro Cárdenas, Olas Altas, and the surrounding side streets to see what feels fun in the moment.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Lazaro+Cardenas+Zona+Romantica+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open the area</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🔞 Adults only</span>
+            <div class="card-title">Mantamar by day, nightlife by night</div>
+            <p>For guests specifically looking for adults-only energy, the south end of Los Muertos Beach and nearby nightlife venues are the right area to explore.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=South+end+of+Los+Muertos+Beach+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open the area</a>
+            </div>
+          </article>
+          <article class="card place-card">
+            <span class="badge">🧖 Optional</span>
+            <div class="card-title">Spartacus Sauna</div>
+            <p>An adults-only option for guests who already know they are looking for that experience. Best left as an optional mention rather than a headline recommendation.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://www.google.com/maps/place/Club-Sauna+Spartacus/@20.6034193,-105.2387595,17z/data=!3m1!4b1!4m6!3m5!1s0x8421454c7b519f57:0xcc02e49430647701!8m2!3d20.6034143!4d-105.2361846!16s%2Fg%2F12cnpk6cy?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open Spartacus</a>
+              <a class="btn btn-secondary" href="https://www.spaspartacus.com/" target="_blank" rel="noopener noreferrer">Venue website</a>
             </div>
           </article>
         </div>
@@ -881,37 +1025,94 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Emergency & medical info</h2>
-            <p class="section-subtitle">Phone numbers are tap-to-call. Review and update these periodically.</p>
+            <h2 class="section-title">Emergency assistance</h2>
+            <p class="section-subtitle">Puerto Vallarta is generally very safe, but this section is here so guests can feel confident and prepared if anything urgent comes up.</p>
           </div>
         </div>
 
-        <div class="grid three-col">
+        <div class="grid two-col">
+          <article class="card card-soft">
+            <span class="card-kicker">Immediate emergency</span>
+            <div class="card-title">Call 911 first</div>
+            <p class="info-line">For police, fire, or ambulance services in Mexico, call <strong>911</strong>.</p>
+            <p class="info-line">Operators may have limited English, so speak slowly and share your location clearly.</p>
+            <div class="actions-row">
+              <a class="btn btn-primary" href="tel:911">Call 911</a>
+            </div>
+            <p class="fineprint">After emergency services are on the way, contact the host so we can support with building access, directions, or follow-up help.</p>
+          </article>
+
           <article class="card">
-            <span class="card-kicker">Medical</span>
+            <span class="card-kicker">Property issues</span>
+            <div class="card-title">Condo support</div>
+            <p class="info-line">For non-emergency condo issues like A/C, power, water, entry questions, or lock concerns, contact the host directly for the fastest help.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="tel:+523221068996">Call Elisa: +52 322 106 8996</a>
+              <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Elisa</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid three-col" style="margin-top:1rem;">
+          <article class="card">
+            <span class="card-kicker">Nearby care</span>
             <div class="card-title">Joya Medical Group</div>
             <p class="info-line">Venustiano Carranza #268</p>
-            <p class="info-line">24-hour walk-in emergency clinic</p>
+            <p class="info-line">24-hour walk-in emergency clinic often used by travelers staying in Zona Romántica.</p>
             <div class="actions-row">
               <a class="btn btn-secondary" href="tel:+523226887334">Call Joya: +52 322 688 7334</a>
+              <a class="btn btn-secondary" href="https://maps.google.com/?q=Joya+Medical+Group+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
             </div>
           </article>
           <article class="card">
             <span class="card-kicker">Hospital</span>
             <div class="card-title">Hospital CMQ City Center</div>
             <p class="info-line">Basilio Badillo #365</p>
-            <p class="info-line">24-hour walk-in emergency clinic</p>
+            <p class="info-line">A convenient private hospital option close to Old Town for urgent but non-life-threatening needs.</p>
             <div class="actions-row">
               <a class="btn btn-secondary" href="tel:+523222231919">Call CMQ: +52 322 223 1919</a>
+              <a class="btn btn-secondary" href="https://maps.google.com/?q=Hospital+CMQ+City+Center+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
             </div>
           </article>
+          <article class="card">
+            <span class="card-kicker">Additional option</span>
+            <div class="card-title">Hospiten Puerto Vallarta</div>
+            <p class="info-line">Marina Vallarta area</p>
+            <p class="info-line">A larger private hospital option if guests prefer care closer to the marina zone.</p>
+            <div class="actions-row">
+              <a class="btn btn-secondary" href="https://maps.google.com/?q=Hospiten+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid two-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Dental</span>
             <div class="card-title">Just Smiles Dental</div>
             <p class="info-line">Basilio Badillo #311</p>
-            <p class="info-line">9:00 AM – 8:00 PM</p>
+            <p class="info-line">Useful for urgent dental issues during business hours.</p>
             <div class="actions-row">
               <a class="btn btn-secondary" href="tel:+523222230505">Call Dentist: +52 322 223 0505</a>
+              <a class="btn btn-secondary" href="https://maps.google.com/?q=Just+Smiles+Dental+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+            </div>
+          </article>
+
+          <article class="card card-soft">
+            <span class="card-kicker">Peace of mind</span>
+            <div class="card-title">Good to know</div>
+            <div class="rule-list">
+              <div class="rule-item">
+                <div class="rule-label">Urgent vs. non-urgent</div>
+                <div class="meta">Call 911 first for any true emergency. For condo-related issues, contact the host directly.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Location helps</div>
+                <div class="meta">When calling for help, share that you are staying at Pavilion in Zona Romántica and give the exact unit if asked.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Most stays are smooth</div>
+                <div class="meta">This page is here just in case. Most guests never need it, but it is reassuring to have it ready.</div>
+              </div>
             </div>
           </article>
         </div>
