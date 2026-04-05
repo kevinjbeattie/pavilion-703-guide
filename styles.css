@@ -96,6 +96,12 @@ h1, h2, h3, p { margin: 0; }
   padding: 0.9rem 0;
 }
 
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
 .brand-block {
   display: flex;
   flex-direction: column;
@@ -121,6 +127,41 @@ h1, h2, h3, p { margin: 0; }
   flex-wrap: wrap;
   font-size: 0.95rem;
   color: var(--muted);
+}
+
+.language-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.24rem;
+  border-radius: 999px;
+  border: 1px solid rgba(191, 213, 218, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.language-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.language-option:hover,
+.language-option:focus-visible {
+  color: var(--text);
+  outline: none;
+}
+
+.language-option.is-active {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(58, 142, 167, 0.2);
 }
 
 .nav-links a,
@@ -426,6 +467,65 @@ h1 {
 
 .recommendation-card .badge {
   margin-bottom: 0.75rem;
+}
+
+.source-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.8rem;
+}
+
+.source-strip-bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: 1rem;
+}
+
+.source-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: 100%;
+  padding: 0.38rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(191, 213, 218, 0.82);
+  background: rgba(248, 252, 252, 0.92);
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.source-badge:hover,
+.source-badge:focus-visible {
+  transform: translateY(-1px);
+  color: var(--text);
+  outline: none;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.source-badge-icon,
+.source-badge-fallback {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.source-badge-icon {
+  object-fit: contain;
+}
+
+.source-badge-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .recommendation-body {
@@ -771,18 +871,17 @@ h1 {
   outline: none;
 }
 
-.back-to-top {
+.floating-menu {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
   z-index: 180;
-  padding: 0.85rem 1rem;
-  border-radius: 999px;
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.7rem;
+  border-radius: 22px;
   border: 1px solid rgba(191, 213, 218, 0.92);
   background: rgba(255, 255, 255, 0.96);
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 800;
   box-shadow: 0 14px 32px rgba(23, 50, 58, 0.16);
   backdrop-filter: blur(12px);
   opacity: 0;
@@ -791,10 +890,47 @@ h1 {
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
+.floating-menu.is-visible,
 .back-to-top.is-visible {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.floating-menu a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 800;
+  background: rgba(248, 252, 252, 0.92);
+  border: 1px solid rgba(191, 213, 218, 0.92);
+  white-space: nowrap;
+}
+
+.floating-menu a:hover,
+.floating-menu a:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.floating-menu .floating-primary {
+  background: var(--brand);
+  color: #fff;
+  border-color: rgba(37, 111, 134, 0.9);
+  box-shadow: 0 10px 18px rgba(58, 142, 167, 0.2);
+}
+
+.back-to-top {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
 }
 
 .footer {
@@ -905,6 +1041,14 @@ dialog::backdrop {
 }
 
 @media (max-width: 719px) {
+  .topbar-inner {
+    align-items: flex-start;
+  }
+
+  .topbar-actions {
+    margin-left: auto;
+  }
+
   .summary-photo {
     min-height: 280px;
     background-position: center 20%;
@@ -916,5 +1060,18 @@ dialog::backdrop {
 
   .action-link {
     flex-basis: auto;
+  }
+
+  .floating-menu {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .floating-menu a {
+    min-width: 0;
+    padding-inline: 0.55rem;
+    font-size: 0.8rem;
   }
 }
