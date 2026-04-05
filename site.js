@@ -1,6 +1,8 @@
 (function () {
   const body = document.body;
+  const isSpanish = document.documentElement.lang.toLowerCase().startsWith('es');
   const topButtons = Array.from(document.querySelectorAll('[data-back-to-top]'));
+  const floatingMenus = Array.from(document.querySelectorAll('[data-floating-menu]'));
   const quickPicksRoot = document.querySelector('[data-quick-picks]');
   const recommendationSectionsRoot = document.querySelector('[data-recommendation-sections]');
   const photoCarousels = Array.from(document.querySelectorAll('[data-carousel-images]'));
@@ -11,8 +13,12 @@
     const focusY = 18 + progress * 46;
     body.style.setProperty('--bg-focus-y', focusY + '%');
 
+    const showFloatingUi = window.scrollY > 280;
     topButtons.forEach((button) => {
-      button.classList.toggle('is-visible', window.scrollY > 280);
+      button.classList.toggle('is-visible', showFloatingUi);
+    });
+    floatingMenus.forEach((menu) => {
+      menu.classList.toggle('is-visible', showFloatingUi);
     });
   }
 
@@ -29,14 +35,53 @@
     if (!url) return '';
 
     const isPrimary = kind === 'maps';
-    const label = isPrimary
-      ? 'Open in Google Maps / Abrir en Google Maps'
-      : 'Open website / Abrir sitio web';
+    const labels = isSpanish
+      ? {
+          maps: 'Abrir en Google Maps',
+          website: 'Abrir sitio web'
+        }
+      : {
+          maps: 'Open in Google Maps',
+          website: 'Open website'
+        };
+    const label = isPrimary ? labels.maps : labels.website;
 
     return '<a class="action-link ' + (isPrimary ? 'action-link-primary' : 'action-link-secondary') + '" href="' +
       escapeHtml(url) +
       '" target="_blank" rel="noopener noreferrer" title="' + escapeHtml(label) + '" aria-label="' + escapeHtml(label) + '">' +
       escapeHtml(label) +
+      '</a>';
+  }
+
+  function getHostnameLabel(url) {
+    try {
+      const parsed = new URL(url);
+      return parsed.hostname.replace(/^www\./, '');
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function getFaviconUrl(url) {
+    try {
+      const parsed = new URL(url);
+      return 'https://www.google.com/s2/favicons?sz=64&domain_url=' + encodeURIComponent(parsed.origin);
+    } catch (error) {
+      return '';
+    }
+  }
+
+  function renderSourceBadge(url, label, kind) {
+    if (!url) return '';
+
+    const faviconUrl = getFaviconUrl(url);
+    const safeLabel = escapeHtml(label);
+
+    return '<a class="source-badge source-badge-' + escapeHtml(kind) + '" href="' + escapeHtml(url) + '" target="_blank" rel="noopener noreferrer" title="' + safeLabel + '">' +
+      (faviconUrl
+        ? '<img class="source-badge-icon" src="' + escapeHtml(faviconUrl) + '" alt="" loading="lazy" />'
+        : '<span class="source-badge-fallback" aria-hidden="true">' + (kind === 'maps' ? '📍' : '🌐') + '</span>') +
+      '<span class="source-badge-text">' + safeLabel + '</span>' +
       '</a>';
   }
 
@@ -54,6 +99,8 @@
         escapeHtml(item.phone.replace(/[^\d+]/g, '')) + '">' + escapeHtml(item.phone) + '</a></div>'
       : '';
 
+    const websiteLabel = getHostnameLabel(item.websiteUrl) || (isSpanish ? 'Sitio web' : 'Website');
+
     return '<article class="card recommendation-card">' +
       '<span class="badge">' + escapeHtml(((item.badgeIcon || '') + ' ' + (item.badge || item.category)).trim()) + '</span>' +
       '<div class="recommendation-body">' +
@@ -62,9 +109,9 @@
       '<p>' + escapeHtml(item.description) + '</p>' +
       phoneMarkup +
       '</div>' +
-      '<div class="action-cluster">' +
-      renderActionLink(item.googleMapsUrl, 'maps') +
-      renderActionLink(item.websiteUrl, 'website') +
+      '<div class="source-strip source-strip-bottom">' +
+      renderSourceBadge(item.googleMapsUrl, isSpanish ? 'Google Maps' : 'Google Maps', 'maps') +
+      renderSourceBadge(item.websiteUrl, websiteLabel, 'website') +
       '</div>' +
       '</article>';
   }
@@ -147,7 +194,7 @@
       const dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'carousel-dot' + (index === 0 ? ' is-active' : '');
-      dot.setAttribute('aria-label', 'Show condo photo ' + (index + 1));
+      dot.setAttribute('aria-label', (isSpanish ? 'Mostrar foto del condominio ' : 'Show condo photo ') + (index + 1));
       dot.addEventListener('click', () => {
         showSlide(index);
       });
