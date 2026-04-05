@@ -5,611 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>Pavilion 703 Guest Guide</title>
-  <style>
-    :root {
-      --bg: #f6fbfc;
-      --surface: #ffffff;
-      --surface-alt: #eef7f8;
-      --text: #16313a;
-      --muted: #5f7880;
-      --brand: #57b4cf;
-      --brand-dark: #2b8ba7;
-      --accent: #b1c84a;
-      --accent-dark: #8ea32d;
-      --border: #d9e7eb;
-      --shadow: 0 10px 30px rgba(22, 49, 58, 0.08);
-      --radius: 20px;
-      --max: 1080px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #f4fafb 0%, #eef6f7 100%);
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: 0;
-    }
-
-    .container {
-      width: min(calc(100% - 1.5rem), var(--max));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(246, 251, 252, 0.88);
-      border-bottom: 1px solid rgba(217, 231, 235, 0.85);
-    }
-
-    .topbar-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.85rem 0;
-    }
-
-    .brand-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .eyebrow {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--brand-dark);
-      font-weight: 700;
-    }
-
-    .brand-title {
-      font-size: 1.08rem;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: none;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      padding: 0.35rem 0.55rem;
-      border-radius: 999px;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      background: var(--surface-alt);
-      color: var(--text);
-      outline: none;
-    }
-
-    .hero {
-      padding: 1rem 0 1.25rem;
-    }
-
-    .hero-card {
-      overflow: hidden;
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at top right, rgba(177, 200, 74, 0.26), transparent 24%),
-        linear-gradient(140deg, rgba(87, 180, 207, 0.18), rgba(255,255,255,0.98) 42%, rgba(177, 200, 74, 0.10));
-      border: 1px solid rgba(217, 231, 235, 0.9);
-      box-shadow: var(--shadow);
-      padding: 1.25rem;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    h1, h2, h3, p { margin: 0; }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      line-height: 1;
-      margin-top: 0.2rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .hero-copy p {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 56ch;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.55rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.9);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 1rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      text-decoration: none;
-      min-height: 48px;
-      padding: 0.8rem 1rem;
-      border-radius: 14px;
-      font-weight: 700;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .btn-primary {
-      background: var(--brand);
-      color: white;
-      box-shadow: 0 10px 18px rgba(87, 180, 207, 0.28);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .section {
-      padding: 0.9rem 0;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .section-title {
-      font-size: clamp(1.35rem, 4vw, 2rem);
-      margin-bottom: 0.2rem;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      max-width: 60ch;
-    }
-
-    .grid {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .quick-grid,
-    .info-grid,
-    .gallery-grid,
-    .two-col,
-    .three-col {
-      grid-template-columns: 1fr;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-      box-shadow: var(--shadow);
-    }
-
-    .card-soft {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fcfd 100%);
-    }
-
-    .card-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin-bottom: 0.25rem;
-    }
-
-    .card-kicker {
-      display: inline-block;
-      margin-bottom: 0.55rem;
-      color: var(--brand-dark);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .card p,
-    .meta,
-    .list li,
-    .info-line {
-      color: var(--muted);
-    }
-
-    .value {
-      font-size: 1.15rem;
-      font-weight: 800;
-      color: var(--text);
-      word-break: break-word;
-    }
-
-    .actions-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-      margin-top: 0.9rem;
-    }
-
-    .fineprint {
-      margin-top: 0.7rem;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .notice {
-      background: #fffbe9;
-      border: 1px solid #efe2a8;
-      color: #6b6228;
-      padding: 0.85rem 0.95rem;
-      border-radius: 16px;
-      font-size: 0.95rem;
-    }
-
-    .quick-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      height: 100%;
-    }
-
-    .quick-link:hover .icon-bubble,
-    .quick-link:focus-visible .icon-bubble {
-      transform: scale(1.04);
-      outline: none;
-    }
-
-    .icon-bubble {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, rgba(87, 180, 207, 0.18), rgba(177, 200, 74, 0.14));
-      font-size: 1.45rem;
-      margin-bottom: 0.85rem;
-      transition: transform 0.15s ease;
-    }
-
-    .list {
-      padding-left: 1rem;
-      margin: 0.65rem 0 0;
-    }
-
-    .list li + li { margin-top: 0.45rem; }
-
-    .split-line {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 0.45rem;
-      font-size: 0.95rem;
-    }
-
-    .rule-list,
-    .details-list {
-      display: grid;
-      gap: 0.7rem;
-      margin-top: 0.85rem;
-    }
-
-    .rule-item,
-    .detail-item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 0.85rem 0.95rem;
-      background: #fbfdfe;
-    }
-
-    .rule-label,
-    .detail-label {
-      font-weight: 800;
-      margin-bottom: 0.18rem;
-    }
-
-    .place-card {
-      display: grid;
-      gap: 0.65rem;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      width: fit-content;
-      border-radius: 999px;
-      background: rgba(177, 200, 74, 0.18);
-      color: var(--accent-dark);
-      font-size: 0.82rem;
-      font-weight: 800;
-      padding: 0.35rem 0.6rem;
-    }
-
-    .map-thumb {
-      position: relative;
-      display: grid;
-      gap: 0.35rem;
-      min-height: 118px;
-      margin-top: 0.35rem;
-      padding: 0.95rem;
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      text-decoration: none;
-      background:
-        radial-gradient(circle at 18% 28%, rgba(87, 180, 207, 0.24) 0 13%, transparent 14%),
-        radial-gradient(circle at 74% 34%, rgba(177, 200, 74, 0.22) 0 11%, transparent 12%),
-        radial-gradient(circle at 56% 72%, rgba(87, 180, 207, 0.18) 0 10%, transparent 11%),
-        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(238, 247, 248, 0.92));
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
-    }
-
-    .map-thumb::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, transparent 0 13%, rgba(255,255,255,0.45) 13% 15%, transparent 15% 38%, rgba(255,255,255,0.45) 38% 40%, transparent 40% 100%),
-        linear-gradient(0deg, transparent 0 18%, rgba(255,255,255,0.38) 18% 20%, transparent 20% 61%, rgba(255,255,255,0.42) 61% 63%, transparent 63% 100%);
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .map-thumb-label,
-    .map-thumb-title,
-    .map-thumb-meta {
-      position: relative;
-      z-index: 1;
-    }
-
-    .map-thumb-label {
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--brand-dark);
-    }
-
-    .map-thumb-title {
-      font-size: 1rem;
-      font-weight: 800;
-    }
-
-    .map-thumb-meta {
-      color: var(--muted);
-      font-size: 0.94rem;
-      max-width: 26ch;
-    }
-
-    .map-thumb:hover,
-    .map-thumb:focus-visible {
-      transform: translateY(-1px);
-      outline: none;
-      box-shadow: var(--shadow);
-    }
-
-    .back-to-top {
-      position: fixed;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 150;
-      padding: 0.85rem 1rem;
-      border-radius: 999px;
-      border: 1px solid rgba(217, 231, 235, 0.9);
-      background: rgba(255,255,255,0.96);
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 800;
-      box-shadow: 0 14px 32px rgba(22, 49, 58, 0.18);
-      backdrop-filter: blur(10px);
-    }
-
-    .back-to-top:hover,
-    .back-to-top:focus-visible {
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .subsection-head {
-      margin: 1.2rem 0 0.8rem;
-    }
-
-    .subsection-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      margin-bottom: 0.2rem;
-    }
-
-    .subsection-copy {
-      color: var(--muted);
-      max-width: 68ch;
-    }
-
-    .photo-frame {
-      aspect-ratio: 4 / 3;
-      width: 100%;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      background: linear-gradient(135deg, rgba(87, 180, 207, 0.15), rgba(177, 200, 74, 0.18));
-      position: relative;
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .photo-placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      padding: 1rem;
-      text-align: center;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .footer {
-      padding: 1rem 0 2.5rem;
-    }
-
-    .footer-card {
-      display: grid;
-      gap: 0.9rem;
-      align-items: start;
-    }
-
-    .small {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    dialog {
-      width: min(calc(100% - 1.5rem), 420px);
-      border: 0;
-      padding: 0;
-      border-radius: 24px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.18);
-    }
-
-    dialog::backdrop {
-      background: rgba(8, 20, 24, 0.52);
-      backdrop-filter: blur(3px);
-    }
-
-    .modal-inner {
-      padding: 1.15rem;
-      background: white;
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.9rem;
-    }
-
-    .close-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: var(--surface-alt);
-      color: var(--text);
-      font-size: 1.15rem;
-    }
-
-    .qr-wrap {
-      display: grid;
-      place-items: center;
-      padding: 0.75rem;
-      border-radius: 18px;
-      background: #f8fbfc;
-      border: 1px solid var(--border);
-      margin: 1rem 0;
-    }
-
-    #wifiQr {
-      display: grid;
-      place-items: center;
-      min-height: 220px;
-    }
-
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 1rem;
-      transform: translateX(-50%) translateY(20px);
-      background: #183741;
-      color: white;
-      padding: 0.85rem 1rem;
-      border-radius: 999px;
-      box-shadow: 0 18px 40px rgba(24, 55, 65, 0.3);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease;
-      font-weight: 700;
-      z-index: 200;
-      text-align: center;
-      max-width: calc(100% - 2rem);
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-
-    @media (min-width: 720px) {
-      .nav-links { display: flex; }
-      .hero-card { padding: 1.5rem; }
-      .hero-grid { grid-template-columns: 1.3fr 0.9fr; align-items: center; }
-      .quick-grid { grid-template-columns: repeat(3, 1fr); }
-      .info-grid { grid-template-columns: repeat(2, 1fr); }
-      .two-col { grid-template-columns: repeat(2, 1fr); }
-      .three-col { grid-template-columns: repeat(3, 1fr); }
-      .footer-card { grid-template-columns: 1.2fr 0.8fr; }
-    }
-
-    @media (min-width: 980px) {
-      .quick-grid { grid-template-columns: repeat(6, 1fr); }
-      .info-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <header class="topbar" id="top">
+<body class="page-shell has-photo-background" id="top">
+  <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand-block">
         <span class="eyebrow">Guest Guide</span>
@@ -618,10 +17,10 @@
       <nav class="nav-links" aria-label="Primary">
         <a href="#wifi">Wi-Fi</a>
         <a href="#stay">Stay Info</a>
-        <a href="#amenities">Amenities</a>
-        <a href="#local">Explore PV</a>
+        <a href="#essentials">Essentials</a>
         <a href="#emergency">Emergency</a>
         <a href="#contact">Contact</a>
+        <a href="recommendations.html">Neighborhood Guide</a>
       </nav>
     </div>
   </header>
@@ -634,29 +33,19 @@
             <div class="hero-copy">
               <span class="eyebrow">Welcome</span>
               <h1>Pavilion 703</h1>
-              <p>Everything your guests need in one place: Wi-Fi, arrival info, condo tips, local recommendations, and emergency contacts. Built to work well on mobile inside the condo.</p>
-              <div class="pill-row">
-                <span class="pill">📶 Fast Wi-Fi</span>
-                <span class="pill">🛏 1 Bedroom</span>
-                <span class="pill">🚿 2 Bathrooms</span>
-                <span class="pill">📍 Zona Romántica</span>
-              </div>
-              <div class="hero-actions">
-                <a class="btn btn-primary" href="#wifi">Connect to Wi-Fi</a>
-                <a class="btn btn-secondary" href="#local">Explore Puerto Vallarta</a>
-              </div>
+              <p>Welcome to Pavilion 703.</p>
+              <p>This guide has been thoughtfully prepared to help you settle in quickly and enjoy your stay with ease. You’ll find key information about the condo, building amenities, and curated local recommendations all in one place.</p>
+              <p>Located in the heart of Zona Romantica, you’re within easy walking distance of many of Puerto Vallarta’s best restaurants, beaches, and attractions.</p>
+              <p class="action-note">Upon arrival, please use the building photo to confirm you are at the correct property when arriving by foot, taxi, or rideshare.</p>
+              <p>Your comfort and experience are our priority. Everything here is designed to make your stay seamless and enjoyable.</p>
             </div>
-            <div class="card card-soft">
-              <span class="card-kicker">Quick stay facts</span>
-              <div class="split-line"><strong>Check-in</strong><span>3:00 PM</span></div>
-              <div class="split-line"><strong>Check-out</strong><span>11:00 AM</span></div>
-              <div class="split-line"><strong>Guests</strong><span>Up to 2</span></div>
-              <div class="split-line"><strong>Host</strong><span>Elisa</span></div>
-              <div class="actions-row">
-                <a class="btn btn-secondary" href="tel:+523221068996">Call Host: +52 322 106 8996</a>
-                <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Host</a>
-              </div>
-              <p class="fineprint">Tip: keep this page open on cellular when arriving, then connect to condo Wi-Fi once you are inside.</p>
+
+            <div class="summary-card">
+              <div
+                class="summary-photo"
+                data-carousel-images="images/pavilion-exterior.jpg|images/pavilion-side-view.jpeg|images/pavilion-street-view.jpg|images/pavilion-pool-all.jpg|images/pavilion-main-pool-fl-5.jpeg"
+                aria-label="Pavilion 703 exterior photo carousel"
+              ></div>
             </div>
           </div>
         </div>
@@ -668,50 +57,44 @@
         <div class="section-header">
           <div>
             <h2 class="section-title">Quick Actions</h2>
-            <p class="section-subtitle">Put the most-used guest tasks first so nobody has to hunt through a binder.</p>
+            <p class="section-subtitle">A quick starting point for the details guests reach for most often.</p>
           </div>
         </div>
-        <div class="grid quick-grid">
+
+        <div class="quick-grid">
           <div class="card">
             <a class="quick-link" href="#wifi">
               <div class="icon-bubble">📶</div>
               <div class="card-title">Wi-Fi</div>
-              <p>View the network name, password, copy button, and QR code.</p>
+              <p>Everything you need to get connected in just a few taps.</p>
             </a>
           </div>
           <div class="card">
             <a class="quick-link" href="#stay">
               <div class="icon-bubble">🔑</div>
-              <div class="card-title">Arrival & Stay</div>
-              <p>Entry notes, check-in and check-out, and common info.</p>
+              <div class="card-title">Stay Info</div>
+              <p>Arrival, departure, host help, and practical condo details.</p>
             </a>
           </div>
           <div class="card">
-            <a class="quick-link" href="#amenities">
+            <a class="quick-link" href="#essentials">
               <div class="icon-bubble">🏠</div>
-              <div class="card-title">Amenities</div>
-              <p>TV, Sonos, coffee station, kitchen, and condo basics.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#local">
-              <div class="icon-bubble">📍</div>
-              <div class="card-title">Explore PV</div>
-              <p>Curated beach, shopping, nightlife, and neighborhood recommendations.</p>
+              <div class="card-title">House Essentials</div>
+              <p>TV, sound, coffee, and the in-condo basics guests ask about most.</p>
             </a>
           </div>
           <div class="card">
             <a class="quick-link" href="#emergency">
               <div class="icon-bubble">🏥</div>
               <div class="card-title">Emergency</div>
-              <p>Hospitals, dental care, and urgent contact info.</p>
+              <p>Quick access to urgent numbers and nearby care options.</p>
             </a>
           </div>
           <div class="card">
-            <a class="quick-link" href="#contact">
-              <div class="icon-bubble">💬</div>
-              <div class="card-title">Contact</div>
-              <p>Reach the host fast by phone or email.</p>
+            <a class="quick-link" href="recommendations.html">
+              <div class="icon-bubble">📍</div>
+              <div class="card-title">Neighborhood Guide</div>
+              <p>Dining, beach clubs, nightlife, and local favorites nearby.</p>
             </a>
           </div>
         </div>
@@ -723,47 +106,38 @@
         <div class="section-header">
           <div>
             <h2 class="section-title">Condo Wi-Fi</h2>
-            <p class="section-subtitle">This section is optimized for guests arriving with cellular service, then connecting once they are inside the condo.</p>
+            <p class="section-subtitle">If you are just arriving, open this on cellular first, then connect once you are inside the condo.</p>
           </div>
         </div>
 
-        <div class="grid two-col">
+        <div class="two-col">
           <article class="card">
-            <span class="card-kicker">Private condo network</span>
-            <div class="card-title">703 Pavilion WiFi</div>
-            <p class="fineprint" style="margin-top:0;">Use this once you are inside the condo.</p>
-
+            <span class="card-kicker">Private Condo Network</span>
             <div class="details-list">
               <div class="detail-item">
                 <div class="detail-label">Network name</div>
-                <div class="value" id="ssidText">703 Pavilion WiFi</div>
+                <div class="value">703 Pavilion WiFi</div>
               </div>
               <div class="detail-item">
                 <div class="detail-label">Password</div>
-                <div class="value" id="passwordText">Pv703!Thx4Staying</div>
+                <div class="value">Pv703!Thx4Staying</div>
               </div>
             </div>
-
-            <div class="actions-row">
-              <button class="btn btn-primary" id="copyPasswordBtn" type="button">Copy password</button>
+            <div class="actions-row wifi-actions">
+              <button class="btn btn-primary" id="copyPasswordBtn" type="button">Copy Password</button>
               <button class="btn btn-secondary" id="showQrBtn" type="button">Show Wi-Fi QR</button>
-            </div>
-
-            <div class="notice" style="margin-top:1rem;">
-              If this guide is open on the same phone you want to connect, copying the password is usually easiest. The QR code is best when viewed on one device and scanned with another.
             </div>
           </article>
 
           <article class="card card-soft">
-            <span class="card-kicker">Connection help</span>
-            <div class="card-title">How guests should connect</div>
+            <span class="card-kicker">Connection Help</span>
+            <div class="card-title">Fastest Way To Connect</div>
             <ul class="list">
-              <li>Open this guide on cellular before entering the condo.</li>
+              <li>Open this page before you arrive so the network details are easy to access.</li>
               <li>Once inside, connect to <strong>703 Pavilion WiFi</strong>.</li>
-              <li>Tap <strong>Copy password</strong> and paste it into Wi-Fi settings.</li>
-              <li>Or tap <strong>Show Wi-Fi QR</strong> and scan it from another device.</li>
+              <li>Use <strong>Copy Password</strong> if you are connecting from the same device.</li>
+              <li>Use the QR code if one device is helping another join the network.</li>
             </ul>
-            <p class="fineprint">Later, you can add an amenity photo here that shows where the router or mesh point is located if guests ever need it.</p>
           </article>
         </div>
       </div>
@@ -773,44 +147,44 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Arrival & Stay Information</h2>
-            <p class="section-subtitle">Keep sensitive access details on a separate protected page if you do not want them broadly exposed.</p>
+            <h2 class="section-title">Stay Information</h2>
+            <p class="section-subtitle">A few practical details to make arrival, departure, and the rhythm of the stay feel easy.</p>
           </div>
         </div>
 
-        <div class="grid info-grid">
+        <div class="info-grid">
           <article class="card">
-            <span class="card-kicker">Check-in</span>
+            <span class="card-kicker">Check-In</span>
             <div class="card-title">Arrival</div>
             <div class="value">3:00 PM</div>
-            <p class="fineprint">Add custom notes for building entry, front desk instructions, or how to collect keys if needed.</p>
+            <p class="fineprint">A relaxed arrival starts here, with time to get settled and enjoy the condo.</p>
           </article>
           <article class="card">
-            <span class="card-kicker">Check-out</span>
+            <span class="card-kicker">Check-Out</span>
             <div class="card-title">Departure</div>
             <div class="value">11:00 AM</div>
-            <p class="fineprint">You can replace this with an easy checklist: lock doors, return fobs, turn off A/C, and take out trash.</p>
+            <p class="fineprint">Leaving by 11:00 AM helps the next guest arrive to a clean, ready condo.</p>
           </article>
           <article class="card">
             <span class="card-kicker">Visitors</span>
-            <div class="card-title">Guest policy</div>
-            <div class="value">Max 2 visitors</div>
-            <p class="fineprint">Visitors must leave ID at the front desk. No visitors permitted after 10:00 PM.</p>
+            <div class="card-title">Guest Policy</div>
+            <div class="value">Max 2 Visitors</div>
+            <p class="fineprint">Visitors leave ID at the front desk, and no visitors are allowed after 10:00 PM.</p>
           </article>
         </div>
 
-        <div class="grid two-col" style="margin-top:1rem;">
+        <div class="detail-grid" style="margin-top:1rem;">
           <article class="card">
-            <span class="card-kicker">General Condo Info</span>
-            <div class="card-title">Good to Know</div>
+            <span class="card-kicker">Good To Know</span>
+            <div class="card-title">Condo Basics</div>
             <div class="rule-list">
               <div class="rule-item">
                 <div class="rule-label">Filtered water</div>
                 <div class="meta">Tap water from the kitchen is filtered.</div>
               </div>
               <div class="rule-item">
-                <div class="rule-label">Coffee & tea</div>
-                <div class="meta">Set out for guests at arrival.</div>
+                <div class="rule-label">Coffee and tea</div>
+                <div class="meta">Coffee, Nespresso pods, tea, and an electric kettle are stocked for the stay.</div>
               </div>
               <div class="rule-item">
                 <div class="rule-label">Trash</div>
@@ -818,59 +192,66 @@
               </div>
               <div class="rule-item">
                 <div class="rule-label">Smoking</div>
-                <div class="meta">Allowed only on the rooftop near the jacuzzi, never on the balcony.</div>
+                <div class="meta">Allowed only on the rooftop near the jacuzzi, never on the balcony and never inside the condo.</div>
               </div>
             </div>
-            <a class="map-thumb" href="https://google.com/maps/place/PAVILION+Luxury+Condominiums/@20.6122436,-105.231183,15z/data=!4m6!3m5!1s0x8421454da9eca2cf:0xebf5a90e86d606a6!8m2!3d20.6032023!4d-105.2357303!16s%2Fg%2F11c6m3lp9x?entry=ttu&amp;g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Pavilion Luxury Condominiums</span>
-              <span class="map-thumb-meta">Open the building location and get directions to Pavilion 703.</span>
-            </a>
           </article>
 
-          <article class="card card-soft">
-            <span class="card-kicker">Getting Around</span>
-            <div class="card-title">Transportation Basics</div>
-            <div class="rule-list">
+          <article class="callout-card" id="contact">
+            <span class="card-kicker">Host Help</span>
+            <div class="card-title">Questions During Your Stay</div>
+            <p class="small">If anything in the condo needs attention or something feels unclear, Elisa is the best first call.</p>
+            <div class="actions-row" style="margin-top:0.85rem;">
+              <a class="btn btn-primary" href="tel:+523221068996">Call Elisa: +52 322 106 8996</a>
+              <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Elisa</a>
+            </div>
+            <div class="rule-list" style="margin-top:1rem;">
               <div class="rule-item">
-                <div class="rule-label">Currency</div>
-                <div class="meta">Mexican pesos are the local currency, though USD and CAD are often accepted.</div>
+                <div class="rule-label">Best for</div>
+                <div class="meta">A/C, power, water, entry questions, or anything else related to the condo itself.</div>
               </div>
+            </div>
+          </article>
+
+          <a class="callout-card callout-card-link" href="recommendations.html">
+            <span class="card-kicker">Neighborhood Guide</span>
+            <div class="card-title">Local Logistics And Favorites</div>
+            <div class="rule-list" style="margin-top:0.85rem;">
               <div class="rule-item">
-                <div class="rule-label">Buses</div>
-                <div class="meta">An affordable way to get around. You can add current fare details if you want.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Uber & taxis</div>
-                <div class="meta">Uber is available. Taxis are plentiful; paying in pesos is usually easiest.</div>
+                <div class="rule-label">Uber and taxis</div>
+                <div class="meta">Both are easy to find nearby, and paying in pesos is usually the simplest option.</div>
               </div>
               <div class="rule-item">
                 <div class="rule-label">Food delivery</div>
-                <div class="meta">Uber Eats and Rappi are good options to include.</div>
+                <div class="meta">Uber Eats and Rappi are both good options for an easy night in.</div>
+              </div>
+              <div class="rule-item">
+                <div class="rule-label">Neighborhood guide</div>
+                <div class="meta">Open the full neighborhood guide for dining, beach clubs, nightlife, and nearby favorites.</div>
               </div>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="amenities">
+    <section class="section" id="essentials">
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Amenities & How-To Guides</h2>
-            <p class="section-subtitle">This is where photos become really useful. Add simple reference images for items guests often ask about.</p>
+            <h2 class="section-title">House Essentials</h2>
+            <p class="section-subtitle">A quick visual guide to the in-condo features guests tend to use most.</p>
           </div>
         </div>
 
-        <div class="grid three-col gallery-grid">
+        <div class="photo-strip">
           <article class="card">
             <span class="card-kicker">Audio</span>
             <div class="card-title">Sonos System</div>
             <div class="photo-frame">
               <img src="images/living-room-tv-sonos.jpeg" alt="Living room TV setup with Sonos Beam and Roku visible" />
             </div>
-            <p class="fineprint">The living room TV is paired with a Sonos Beam for fuller TV and movie sound. Guests can use AirPlay to stream music and should keep volume considerate during very late or very early hours.</p>
+            <p class="fineprint">The living room TV uses the Sonos Beam for fuller TV and movie sound. For music, guests should use AirPlay and keep volume considerate during very late or very early hours.</p>
           </article>
 
           <article class="card">
@@ -879,23 +260,24 @@
             <div class="photo-frame">
               <img src="images/bedroom-roku.jpeg" alt="Bedroom TV showing the Roku welcome screen" />
             </div>
-            <p class="fineprint">Guests can use the Roku home screen to sign into their own streaming apps during the stay. Roku will prompt for checkout details so personal accounts can be removed easily.</p>
+            <p class="fineprint">Each TV is equipped with a Roku for easy access to streaming apps.</p>
+            <p class="fineprint">You are welcome to sign into your own streaming services during your stay. For privacy, our Roku players are in guest mode, which will automatically clear login information after your checkout date. Simply enter your checkout date when prompted and sign in to your apps as usual.</p>
           </article>
 
           <article class="card">
             <span class="card-kicker">Kitchen</span>
-            <div class="card-title">Coffee Station</div>
+            <div class="card-title">Coffee And Tea Station</div>
             <div class="photo-frame">
               <img src="images/coffee-station-real.jpeg" alt="Coffee station with standard coffee brewer, filters, ground coffee, and Nespresso machine" />
             </div>
-            <p class="fineprint">The condo includes a standard drip coffee maker with filters and ground coffee, a Nespresso machine with pods including decaf, tea, and an electric tea kettle.</p>
+            <p class="fineprint">Includes drip coffee, filters, ground coffee, Nespresso pods including decaf, tea, and an electric kettle.</p>
           </article>
         </div>
 
-        <div class="grid" style="margin-top:1rem;">
+        <div class="two-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Condo Overview</span>
-            <div class="card-title">What’s included</div>
+            <div class="card-title">What Is Included</div>
             <ul class="list">
               <li>King-size bed</li>
               <li>Queen-size sofa sleeper</li>
@@ -909,270 +291,30 @@
       </div>
     </section>
 
-    <section class="section" id="local">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Explore Puerto Vallarta</h2>
-            <p class="section-subtitle">These recommendations are personally curated to help guests settle in quickly, explore confidently, and enjoy the neighborhood without information overload.</p>
-          </div>
-        </div>
-
-        <div class="subsection-head">
-          <div class="subsection-title">General Favorites</div>
-          <p class="subsection-copy">Start guests with the easy wins: groceries, beach time, and practical shopping. These are the places most people ask about first.</p>
-        </div>
-
-        <div class="grid three-col">
-          <article class="card place-card">
-            <span class="badge">🛒 Groceries</span>
-            <div class="card-title">Near the Condo</div>
-            <p>Mercado Ollin is the easiest polished grocery stop in Zona Romántica, and Oxxo is useful for quick basics, water, and late-night essentials.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Mercado+Ollin+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Mercado Ollin</span>
-              <span class="map-thumb-meta">Close to the condo for groceries, produce, and easy first-day essentials.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://mercadoollin.com/" target="_blank" rel="noopener noreferrer">Market Website</a>
-            </div>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🏬 Shopping</span>
-            <div class="card-title">Malls & Essentials</div>
-            <p>For errands beyond the neighborhood, Plaza Caracol is a dependable all-purpose shopping stop with a wide mix of services and stores.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Plaza+Caracol+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Plaza Caracol</span>
-              <span class="map-thumb-meta">A practical stop for shopping, services, and errands beyond Zona Romántica.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://www.plazacaracol.mx/" target="_blank" rel="noopener noreferrer">Mall Website</a>
-            </div>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🏖️ Beach</span>
-            <div class="card-title">Los Muertos Beach & pier</div>
-            <p>The classic neighborhood beach: easy to walk to, lively all day, and a great anchor point for sunsets, water taxis, and people-watching.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Los+Muertos+Beach+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Los Muertos Beach</span>
-              <span class="map-thumb-meta">A walkable beach and pier area for sunset views, lounging, and water taxis.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://visitpuertovallarta.com/things-to-do/beaches/los-muertos-beach" target="_blank" rel="noopener noreferrer">Beach Guide</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="subsection-head">
-          <div class="subsection-title">Food & Dining</div>
-          <p class="subsection-copy">Rather than listing everything nearby, this section highlights a few dependable choices across breakfast, elevated dining, and romantic dinner plans.</p>
-        </div>
-
-        <div class="grid three-col">
-          <article class="card place-card">
-            <span class="badge">☕ Breakfast</span>
-            <div class="card-title">La Chilaquer&iacute;a</div>
-            <p>A standout breakfast and brunch stop for guests who want something casual, flavorful, and distinctly local. A great first-morning recommendation.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/place/La+chilaqueria/@20.603508,-105.2398176,16z/data=!3m1!4b1!4m6!3m5!1s0x84214566e8f7a1c5:0x68caaa44fd69d13f!8m2!3d20.603503!4d-105.2372427!16s%2Fg%2F11nxsb3trj?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">La Chilaquer&iacute;a</span>
-              <span class="map-thumb-meta">A relaxed breakfast and brunch stop close enough for an easy morning outing.</span>
-            </a>
-          </article>
-          <article class="card place-card">
-            <span class="badge">✨ Elevated dining</span>
-            <div class="card-title">IC&Uacute;</div>
-            <p>One of the most memorable fine-dining experiences in Puerto Vallarta. Ideal for a special evening when guests want something polished, creative, and destination-worthy.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/place/IC%C3%9A/@20.6019591,-105.2401377,16z/data=!4m6!3m5!1s0x8421459f2249fbb1:0xd4fcc39b910aa093!8m2!3d20.6027409!4d-105.2366316!16s%2Fg%2F11hbbndg60?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">IC&Uacute;</span>
-              <span class="map-thumb-meta">A refined dinner choice for guests planning a destination-worthy evening out.</span>
-            </a>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🌅 Romantic dinner</span>
-            <div class="card-title">La Cappella</div>
-            <p>A classic choice for a more romantic night out, known for its atmosphere, live music, and memorable views. Best for guests planning a celebratory dinner.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/place/La+Cappella+Restaurante/@20.6037876,-105.2329005,16z/data=!4m6!3m5!1s0x8421454e5eb48f3d:0x5e698bcf65a2adb8!8m2!3d20.6078329!4d-105.2339494!16s%2Fg%2F11fzf9t_6h?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">La Cappella</span>
-              <span class="map-thumb-meta">A romantic dinner destination known for views, live music, and special-occasion atmosphere.</span>
-            </a>
-          </article>
-        </div>
-
-        <div class="subsection-head">
-          <div class="subsection-title">Know Before You Go</div>
-          <p class="subsection-copy">A few practical notes go a long way in Puerto Vallarta, especially for first-time visitors staying in Zona Rom&aacute;ntica.</p>
-        </div>
-
-        <div class="grid two-col">
-          <article class="card">
-            <span class="card-kicker">Local Tips</span>
-            <div class="card-title">Easy Day-One Advice</div>
-            <div class="rule-list">
-              <div class="rule-item">
-                <div class="rule-label">Very walkable</div>
-                <div class="meta">Zona Rom&aacute;ntica is easy to explore on foot, and many guests will not need a car at all.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Cobblestones & sidewalks</div>
-                <div class="meta">Street surfaces can be uneven and sidewalks narrow, so comfortable shoes are a smart call.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Cash helps</div>
-                <div class="meta">Cards are widely accepted, but pesos are useful for small shops, taxis, tips, and casual food stops.</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="card card-soft">
-            <span class="card-kicker">Neighborhood Rhythm</span>
-            <div class="card-title">What Guests Should Expect</div>
-            <div class="rule-list">
-              <div class="rule-item">
-                <div class="rule-label">Street food can be great</div>
-                <div class="meta">Some of the best casual meals are neighborhood taco stands and market stops, especially in the evening.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Nightlife runs late</div>
-                <div class="meta">This area can stay lively into the night, so light sleepers may appreciate earplugs.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Local charm is real</div>
-                <div class="meta">Puerto Vallarta blends polished hospitality with a lived-in neighborhood feel, which is part of what makes it special.</div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <div class="subsection-head">
-          <div class="subsection-title">LGBTQ+ Puerto Vallarta</div>
-          <p class="subsection-copy">Zona Romántica is one of the most welcoming LGBTQ+ neighborhoods anywhere. These options keep the tone friendly and inclusive without turning the page into a nightlife directory.</p>
-        </div>
-
-        <div class="grid three-col">
-          <article class="card place-card">
-            <span class="badge">🌈 Beach club</span>
-            <div class="card-title">Mantamar</div>
-            <p>An adults-only beach club at the south end of Los Muertos Beach. Good for a polished beach day, cocktails, music, and a more social scene.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Mantamar+Beach+Club+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Mantamar</span>
-              <span class="map-thumb-meta">At the south end of Los Muertos Beach for a more social adults-only beach day.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://www.mantamarvallarta.com/en" target="_blank" rel="noopener noreferrer">Club Website</a>
-            </div>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🍹 Nightlife</span>
-            <div class="card-title">Mr. Flamingo</div>
-            <p>One of the neighborhood’s most recognizable corners for cocktails, music, and a lively mixed crowd. Great if guests want something energetic and easy to find.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Mr.+Flamingo+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Mr. Flamingo</span>
-              <span class="map-thumb-meta">A lively, easy-to-find nightlife stop in the heart of Zona Rom&aacute;ntica.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://vallartahub.com/en/bars-and-nightclubs/mr-flamingo/" target="_blank" rel="noopener noreferrer">Venue Details</a>
-            </div>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🎭 Shows</span>
-            <div class="card-title">Cabaret & Drag Shows</div>
-            <p>For guests who want a polished night of performances, these are two of the strongest picks in the neighborhood.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Act2PV+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Act2PV</span>
-              <span class="map-thumb-meta">A go-to theater and cabaret venue for performance-forward evenings out.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://act2pv.com/" target="_blank" rel="noopener noreferrer">Act2PV Website</a>
-            </div>
-            <a class="map-thumb" href="https://www.google.com/maps/place/The+Palm+Cabaret+and+Bar/@20.6000715,-105.2388605,18z/data=!3m1!4b1!4m6!3m5!1s0x84215ab4ace633a3:0xe2206abf41dbb883!8m2!3d20.600069!4d-105.237573!16s%2Fg%2F11b6shm570?entry=ttu&amp;g_ep=EgoyMDI2MDQwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">The Palm Cabaret and Bar</span>
-              <span class="map-thumb-meta">A seated cabaret and drag-show venue for guests who want a polished night of entertainment.</span>
-            </a>
-          </article>
-        </div>
-
-        <div class="subsection-head">
-          <div class="subsection-title">Optional After-Dark</div>
-          <p class="subsection-copy">This section is intentionally optional. It gives adult guests a discreet pointer if that is their scene, without making it the focus of the guide.</p>
-        </div>
-
-        <div class="grid two-col">
-          <article class="card place-card">
-            <span class="badge">🌙 Late night</span>
-            <div class="card-title">Street-to-Street Bar Hopping</div>
-            <p>Many guests will have the best time simply walking Lázaro Cárdenas, Olas Altas, and the surrounding side streets to see what feels fun in the moment.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=Lazaro+Cardenas+Zona+Romantica+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">L&aacute;zaro C&aacute;rdenas Area</span>
-              <span class="map-thumb-meta">Use this as a jumping-off point for walking the busiest nightlife blocks nearby.</span>
-            </a>
-          </article>
-          <article class="card place-card">
-            <span class="badge">🔞 Optional</span>
-            <div class="card-title">Adult-Oriented Venues</div>
-            <p>For guests specifically seeking more adult nightlife, these are best treated as optional references rather than headline recommendations.</p>
-            <a class="map-thumb" href="https://www.google.com/maps/search/?api=1&query=South+end+of+Los+Muertos+Beach+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">South End of Los Muertos Beach</span>
-              <span class="map-thumb-meta">A useful map anchor for the beach-club and adult-oriented after-dark zone at the south end.</span>
-            </a>
-            <a class="map-thumb" href="http://google.com/maps/place/Cheeky+Pool+Club/@20.6030159,-105.2341841,19.33z/data=!4m6!3m5!1s0x842145f057a80219:0xc64c2c7c50c66264!8m2!3d20.6041907!4d-105.2301998!16s%2Fg%2F11yl4cl0mf?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Cheeky Pool Club</span>
-              <span class="map-thumb-meta">An adults-only pool club option for guests who want a more playful daytime social scene.</span>
-            </a>
-            <a class="map-thumb" href="https://www.google.com/maps/place/Club-Sauna+Spartacus/@20.6034193,-105.2387595,17z/data=!3m1!4b1!4m6!3m5!1s0x8421454c7b519f57:0xcc02e49430647701!8m2!3d20.6034143!4d-105.2361846!16s%2Fg%2F12cnpk6cy?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Spartacus Sauna</span>
-              <span class="map-thumb-meta">An optional adults-only reference for guests already seeking that specific experience.</span>
-            </a>
-            <div class="actions-row">
-              <a class="btn btn-secondary" href="https://www.spaspartacus.com/" target="_blank" rel="noopener noreferrer">Spartacus Website</a>
-            </div>
-            <a class="map-thumb" href="https://www.google.com/maps/place/Wetdreams/@20.6040237,-105.2736393,13z/data=!3m1!5s0x8421454c50ec6115:0x58a6ceca12d7ce38!4m10!1m2!2m1!1swetdrams!3m6!1s0x8421454c50c0ff3b:0xb4d12a88061107f!8m2!3d20.6036949!4d-105.2347232!15sCgh3ZXRkcmFtc1oKIgh3ZXRkcmFtc5IBB2dheV9iYXLgAQA!16s%2Fg%2F1tl8l0bp?entry=ttu&amp;g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Wet Dreams</span>
-              <span class="map-thumb-meta">A more over-the-top nightlife stop for guests specifically looking for a louder, more adult-oriented spectacle.</span>
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="emergency">
       <div class="container">
         <div class="section-header">
           <div>
             <h2 class="section-title">Emergency Assistance</h2>
-            <p class="section-subtitle">Puerto Vallarta is generally very safe, but this section is here so guests can feel confident and prepared if anything urgent comes up.</p>
+            <p class="section-subtitle">Hopefully you will not need any of this, but it is here in one place just in case.</p>
           </div>
         </div>
 
-        <div class="grid two-col">
+        <div class="two-col">
           <article class="card card-soft">
             <span class="card-kicker">Immediate Emergency</span>
             <div class="card-title">Call 911 First</div>
             <p class="info-line">For police, fire, or ambulance services in Mexico, call <strong>911</strong>.</p>
-            <p class="info-line">Operators may have limited English, so speak slowly and share your location clearly.</p>
+            <p class="info-line">After help is on the way, contact the host so we can support with building access or follow-up details.</p>
             <div class="actions-row">
               <a class="btn btn-primary" href="tel:911">Call 911</a>
             </div>
-            <p class="fineprint">After emergency services are on the way, contact the host so we can support with building access, directions, or follow-up help.</p>
           </article>
 
           <article class="card">
-            <span class="card-kicker">Property Issues</span>
-            <div class="card-title">Condo Support</div>
-            <p class="info-line">For non-emergency condo issues like A/C, power, water, entry questions, or lock concerns, contact the host directly for the fastest help.</p>
+            <span class="card-kicker">Condo Support</span>
+            <div class="card-title">Contact Elisa</div>
+            <p class="info-line">For condo-related issues like A/C, power, water, or access questions, Elisa is the fastest point of contact.</p>
             <div class="actions-row">
               <a class="btn btn-secondary" href="tel:+523221068996">Call Elisa: +52 322 106 8996</a>
               <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Elisa</a>
@@ -1180,80 +322,32 @@
           </article>
         </div>
 
-        <div class="grid three-col" style="margin-top:1rem;">
+        <div class="three-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Nearby Care</span>
             <div class="card-title">Joya Medical Group</div>
-            <p class="info-line">Venustiano Carranza #268</p>
-            <p class="info-line">24-hour walk-in emergency clinic often used by travelers staying in Zona Romántica.</p>
-            <a class="map-thumb" href="https://maps.google.com/?q=Joya+Medical+Group+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Joya Medical Group</span>
-              <span class="map-thumb-meta">A convenient clinic option for urgent care near Zona Rom&aacute;ntica.</span>
-            </a>
+            <p class="fineprint">24-hour walk-in emergency clinic often used by travelers in Zona Romantica.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="tel:+523226887334">Call Joya: +52 322 688 7334</a>
+              <a class="action-link action-link-primary" href="https://maps.google.com/?q=Joya+Medical+Group+Puerto+Vallarta" target="_blank" rel="noopener noreferrer" title="Open in Google Maps / Abrir en Google Maps" aria-label="Open in Google Maps / Abrir en Google Maps">Open in Google Maps / Abrir en Google Maps</a>
+              <a class="action-link action-link-phone" href="tel:+523226887334" title="Call Joya / Llamar a Joya" aria-label="Call Joya / Llamar a Joya">Call Joya / Llamar a Joya</a>
             </div>
           </article>
           <article class="card">
             <span class="card-kicker">Hospital</span>
             <div class="card-title">Hospital CMQ City Center</div>
-            <p class="info-line">Basilio Badillo #365</p>
-            <p class="info-line">A convenient private hospital option close to Old Town for urgent but non-life-threatening needs.</p>
-            <a class="map-thumb" href="https://maps.google.com/?q=Hospital+CMQ+City+Center+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Hospital CMQ City Center</span>
-              <span class="map-thumb-meta">A nearby private hospital option that is easy for travelers to reach from Old Town.</span>
-            </a>
+            <p class="fineprint">A nearby private hospital option for urgent but non-life-threatening needs.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="tel:+523222231919">Call CMQ: +52 322 223 1919</a>
+              <a class="action-link action-link-primary" href="https://maps.google.com/?q=Hospital+CMQ+City+Center+Puerto+Vallarta" target="_blank" rel="noopener noreferrer" title="Open in Google Maps / Abrir en Google Maps" aria-label="Open in Google Maps / Abrir en Google Maps">Open in Google Maps / Abrir en Google Maps</a>
+              <a class="action-link action-link-phone" href="tel:+523222231919" title="Call CMQ / Llamar a CMQ" aria-label="Call CMQ / Llamar a CMQ">Call CMQ / Llamar a CMQ</a>
             </div>
           </article>
-          <article class="card">
-            <span class="card-kicker">Additional Option</span>
-            <div class="card-title">Hospiten Puerto Vallarta</div>
-            <p class="info-line">Marina Vallarta area</p>
-            <p class="info-line">A larger private hospital option if guests prefer care closer to the marina zone.</p>
-            <a class="map-thumb" href="https://maps.google.com/?q=Hospiten+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Hospiten Puerto Vallarta</span>
-              <span class="map-thumb-meta">A larger hospital option closer to the marina area if guests prefer that route.</span>
-            </a>
-          </article>
-        </div>
-
-        <div class="grid two-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Dental</span>
             <div class="card-title">Just Smiles Dental</div>
-            <p class="info-line">Basilio Badillo #311</p>
-            <p class="info-line">Useful for urgent dental issues during business hours.</p>
-            <a class="map-thumb" href="https://maps.google.com/?q=Just+Smiles+Dental+Puerto+Vallarta" target="_blank" rel="noopener noreferrer">
-              <span class="map-thumb-label">Google Maps</span>
-              <span class="map-thumb-title">Just Smiles Dental</span>
-              <span class="map-thumb-meta">A close-by dental option in case guests need same-trip care.</span>
-            </a>
+            <p class="fineprint">A convenient nearby option if a same-trip dental issue comes up.</p>
             <div class="actions-row">
-              <a class="btn btn-secondary" href="tel:+523222230505">Call Dentist: +52 322 223 0505</a>
-            </div>
-          </article>
-
-          <article class="card card-soft">
-            <span class="card-kicker">Peace of Mind</span>
-            <div class="card-title">Good to Know</div>
-            <div class="rule-list">
-              <div class="rule-item">
-                <div class="rule-label">Urgent vs. non-urgent</div>
-                <div class="meta">Call 911 first for any true emergency. For condo-related issues, contact the host directly.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Location helps</div>
-                <div class="meta">When calling for help, share that you are staying at Pavilion in Zona Romántica and give the exact unit if asked.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Most stays are smooth</div>
-                <div class="meta">This page is here just in case. Most guests never need it, but it is reassuring to have it ready.</div>
-              </div>
+              <a class="action-link action-link-primary" href="https://maps.google.com/?q=Just+Smiles+Dental+Puerto+Vallarta" target="_blank" rel="noopener noreferrer" title="Open in Google Maps / Abrir en Google Maps" aria-label="Open in Google Maps / Abrir en Google Maps">Open in Google Maps / Abrir en Google Maps</a>
+              <a class="action-link action-link-phone" href="tel:+523222230505" title="Call dentist / Llamar al dentista" aria-label="Call dentist / Llamar al dentista">Call dentist / Llamar al dentista</a>
             </div>
           </article>
         </div>
@@ -1261,49 +355,13 @@
     </section>
   </main>
 
-  <footer class="footer" id="contact">
-    <div class="container">
-      <div class="card footer-card">
-        <div>
-          <span class="card-kicker">Contact</span>
-          <div class="card-title">Need help during your stay?</div>
-          <p class="small">For urgent condo issues, questions about amenities, or anything else, contact the host directly.</p>
-          <div class="actions-row">
-            <a class="btn btn-primary" href="tel:+523221068996">Call Elisa: +52 322 106 8996</a>
-            <a class="btn btn-secondary" href="mailto:elisa@lifestylepropertiespv.com">Email Elisa</a>
-          </div>
-        </div>
-        <div>
-          <div class="rule-list">
-            <div class="rule-item">
-              <div class="rule-label">Host</div>
-              <div class="meta">Elisa</div>
-            </div>
-            <div class="rule-item">
-              <div class="rule-label">Phone</div>
-              <div class="meta">+52 322 106 8996</div>
-            </div>
-            <div class="rule-item">
-              <div class="rule-label">Email</div>
-              <div class="meta">elisa@lifestylepropertiespv.com</div>
-            </div>
-            <div class="rule-item">
-              <div class="rule-label">Last updated</div>
-              <div class="meta">Replace with your date when you publish</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <a class="back-to-top" href="#top" aria-label="Back to top">Back to Top</a>
+  <a class="back-to-top" href="#top" aria-label="Back to top" data-back-to-top>Back To Top</a>
 
   <dialog id="qrDialog" aria-labelledby="qrTitle">
     <div class="modal-inner">
       <div class="modal-header">
         <div>
-          <div class="card-title" id="qrTitle">Wi-Fi QR code</div>
+          <div class="card-title" id="qrTitle">Wi-Fi QR Code</div>
           <p class="small">Best when viewed on one device and scanned with another.</p>
         </div>
         <button class="close-btn" id="closeQrBtn" type="button" aria-label="Close">✕</button>
@@ -1311,13 +369,14 @@
       <div class="qr-wrap">
         <div id="wifiQr" aria-label="Wi-Fi QR code"></div>
       </div>
-      <p class="small">Network: <strong>703 Pavilion WiFi</strong><br/>Password: <strong>Pv703!Thx4Staying</strong></p>
+      <p class="small">Network: <strong>703 Pavilion WiFi</strong><br />Password: <strong>Pv703!Thx4Staying</strong></p>
     </div>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="site.js"></script>
   <script>
     const wifi = {
       ssid: '703 Pavilion WiFi',
@@ -1331,7 +390,6 @@
     const qrDialog = document.getElementById('qrDialog');
     const qrTarget = document.getElementById('wifiQr');
     const toast = document.getElementById('toast');
-
     let qrRendered = false;
 
     function showToast(message) {
@@ -1346,7 +404,6 @@
     async function copyPassword() {
       try {
         await navigator.clipboard.writeText(wifi.password);
-        showToast('Wi-Fi password copied');
       } catch (error) {
         const fallback = document.createElement('textarea');
         fallback.value = wifi.password;
@@ -1354,8 +411,8 @@
         fallback.select();
         document.execCommand('copy');
         fallback.remove();
-        showToast('Wi-Fi password copied');
       }
+      showToast('Wi-Fi password copied');
     }
 
     function openQr() {
@@ -1378,10 +435,8 @@
     qrDialog.addEventListener('click', (event) => {
       const rect = qrDialog.getBoundingClientRect();
       const clickedInDialog = (
-        rect.top <= event.clientY &&
-        event.clientY <= rect.top + rect.height &&
-        rect.left <= event.clientX &&
-        event.clientX <= rect.left + rect.width
+        rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width
       );
       if (!clickedInDialog) qrDialog.close();
     });
