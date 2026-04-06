@@ -24,13 +24,26 @@
         <span class="brand-title">Pavilion 703</span>
       </div>
       <div class="topbar-actions">
+        <div class="mobile-nav-actions">
+          <a class="mobile-home-link" href="#top">Inicio</a>
+          <details class="mobile-sections-menu">
+            <summary>Secciones <span class="mobile-sections-chevron" aria-hidden="true">▾</span></summary>
+            <div class="mobile-sections-list">
+              <a href="#wifi">Wi-Fi del Condominio</a>
+              <a href="#stay">Información de la Estancia</a>
+              <a href="#essentials">Esenciales</a>
+              <a href="#emergency">Asistencia de Emergencia</a>
+              <a href="#guide">Explora Puerto Vallarta</a>
+            </div>
+          </details>
+        </div>
         <nav class="nav-links" aria-label="Principal">
-          <a href="#wifi">Wi-Fi</a>
-          <a href="#stay">Estancia</a>
+          <a href="#top">Inicio</a>
+          <a href="#wifi">Wi-Fi del Condominio</a>
+          <a href="#stay">Información de la Estancia</a>
           <a href="#essentials">Esenciales</a>
-          <a href="#emergency">Emergencia</a>
-          <a href="#contact">Contacto</a>
-          <a href="recommendations-es.html">Guía del Vecindario</a>
+          <a href="#emergency">Asistencia de Emergencia</a>
+          <a href="#guide">Explora Puerto Vallarta</a>
         </nav>
         <div class="language-picker" aria-label="Selector de idioma">
           <a class="language-option" href="index.html" lang="en">EN</a>
@@ -62,55 +75,6 @@
                 aria-label="Carrusel de fotos de Pavilion 703"
               ></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="quick-actions">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Acciones Rápidas</h2>
-            <p class="section-subtitle">Un punto de partida sencillo para lo que los huéspedes consultan con más frecuencia.</p>
-          </div>
-        </div>
-
-        <div class="quick-grid">
-          <div class="card">
-            <a class="quick-link" href="#wifi">
-              <div class="icon-bubble">📶</div>
-              <div class="card-title">Wi-Fi</div>
-              <p>Todo lo necesario para conectarte en unos pocos pasos.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#stay">
-              <div class="icon-bubble">🔑</div>
-              <div class="card-title">Información de la Estancia</div>
-              <p>Llegada, salida, contacto del anfitrión y detalles prácticos del condominio.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#essentials">
-              <div class="icon-bubble">🏠</div>
-              <div class="card-title">Esenciales</div>
-              <p>TV, sonido, café, amenidades del edificio y lo básico que más se consulta.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#emergency">
-              <div class="icon-bubble">🏥</div>
-              <div class="card-title">Emergencia</div>
-              <p>Acceso rápido a números urgentes y opciones de atención cercanas.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="recommendations-es.html">
-              <div class="icon-bubble">📍</div>
-              <div class="card-title">Guía del Vecindario</div>
-              <p>Restaurantes, clubes de playa, vida nocturna y favoritos cercanos.</p>
-            </a>
           </div>
         </div>
       </div>
@@ -228,24 +192,6 @@
             </div>
           </article>
 
-          <a class="callout-card callout-card-link" href="recommendations-es.html">
-            <span class="card-kicker">Guía del Vecindario</span>
-            <div class="card-title">Transporte y Entregas</div>
-            <div class="rule-list" style="margin-top:0.85rem;">
-              <div class="rule-item">
-                <div class="rule-label">Uber y taxis</div>
-                <div class="meta">Ambos son fáciles de encontrar cerca, y pagar en pesos suele ser lo más sencillo.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Entrega de comida</div>
-                <div class="meta">Uber Eats y Rappi son buenas opciones para una noche tranquila en casa.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Guía del vecindario</div>
-                <div class="meta">Abre la guía completa del vecindario para restaurantes, clubes de playa, vida nocturna y favoritos cercanos.</div>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </section>
@@ -382,17 +328,33 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <nav class="floating-menu" aria-label="Menú rápido de secciones" data-floating-menu>
-    <a class="floating-primary back-to-top" href="#top" aria-label="Volver arriba" data-back-to-top>Inicio</a>
-    <a href="#quick-actions">Rápido</a>
-    <a href="#wifi">Wi-Fi</a>
-    <a href="#stay">Estancia</a>
-    <a href="#essentials">Esenciales</a>
-    <a href="#emergency">Emergencia</a>
-    <a href="#contact">Contacto</a>
-  </nav>
+    <section class="section" id="guide">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Guía del Vecindario</span>
+              <h2 class="section-title">Explora Puerto Vallarta</h2>
+              <p>Cuando estés listo para salir del condominio, la guía del vecindario reúne nuestros lugares favoritos para comer, ir a la playa, salir por la noche y resolver los detalles prácticos de moverte por la zona.</p>
+              <ul class="list">
+                <li>Restaurantes, playa y vida nocturna seleccionados</li>
+                <li>Consejos de transporte y entrega de comida</li>
+                <li>Notas locales que hacen la zona más fácil de disfrutar</li>
+              </ul>
+              <div class="actions-row" style="margin-top:0.85rem;">
+                <a class="btn btn-primary" href="recommendations-es.html">Abrir Guía del Vecindario</a>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-photo" style="background-image: linear-gradient(180deg, rgba(17, 33, 40, 0.05), rgba(17, 33, 40, 0.22) 44%, rgba(17, 33, 40, 0.58)), url('images/recommendations-hero.webp');" aria-label="Vista de la playa de Puerto Vallarta"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <dialog id="qrDialog" aria-labelledby="qrTitle">
     <div class="modal-inner">

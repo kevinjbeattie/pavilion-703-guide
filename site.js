@@ -1,8 +1,6 @@
 (function () {
   const body = document.body;
   const isSpanish = document.documentElement.lang.toLowerCase().startsWith('es');
-  const topButtons = Array.from(document.querySelectorAll('[data-back-to-top]'));
-  const floatingMenus = Array.from(document.querySelectorAll('[data-floating-menu]'));
   const quickPicksRoot = document.querySelector('[data-quick-picks]');
   const recommendationSectionsRoot = document.querySelector('[data-recommendation-sections]');
   const photoCarousels = Array.from(document.querySelectorAll('[data-carousel-images]'));
@@ -12,14 +10,6 @@
     const progress = Math.min(window.scrollY / maxScroll, 1);
     const focusY = 18 + progress * 46;
     body.style.setProperty('--bg-focus-y', focusY + '%');
-
-    const showFloatingUi = window.scrollY > 280;
-    topButtons.forEach((button) => {
-      button.classList.toggle('is-visible', showFloatingUi);
-    });
-    floatingMenus.forEach((menu) => {
-      menu.classList.toggle('is-visible', showFloatingUi);
-    });
   }
 
   function escapeHtml(value) {
@@ -207,13 +197,6 @@
       showSlide((activeIndex + 1) % slides.length);
     }, 4200);
   }
-
-  topButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
 
   renderRecommendationSections(window.RECOMMENDATIONS_PAGE_DATA);
   photoCarousels.forEach(initPhotoCarousel);

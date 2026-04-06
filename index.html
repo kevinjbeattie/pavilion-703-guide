@@ -24,13 +24,26 @@
         <span class="brand-title">Pavilion 703</span>
       </div>
       <div class="topbar-actions">
+        <div class="mobile-nav-actions">
+          <a class="mobile-home-link" href="#top">Home</a>
+          <details class="mobile-sections-menu">
+            <summary>Sections <span class="mobile-sections-chevron" aria-hidden="true">▾</span></summary>
+            <div class="mobile-sections-list">
+              <a href="#wifi">Condo Wi-Fi</a>
+              <a href="#stay">Stay Information</a>
+              <a href="#essentials">Essentials</a>
+              <a href="#emergency">Emergency Assistance</a>
+              <a href="#guide">Explore Puerto Vallarta</a>
+            </div>
+          </details>
+        </div>
         <nav class="nav-links" aria-label="Primary">
-          <a href="#wifi">Wi-Fi</a>
-          <a href="#stay">Stay Info</a>
+          <a href="#top">Home</a>
+          <a href="#wifi">Condo Wi-Fi</a>
+          <a href="#stay">Stay Information</a>
           <a href="#essentials">Essentials</a>
-          <a href="#emergency">Emergency</a>
-          <a href="#contact">Contact</a>
-          <a href="recommendations.html">Neighborhood Guide</a>
+          <a href="#emergency">Emergency Assistance</a>
+          <a href="#guide">Explore Puerto Vallarta</a>
         </nav>
         <div class="language-picker" aria-label="Language picker">
           <a class="language-option is-active" href="index.html" lang="en">EN</a>
@@ -62,55 +75,6 @@
                 aria-label="Pavilion 703 exterior photo carousel"
               ></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="quick-actions">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2 class="section-title">Quick Actions</h2>
-            <p class="section-subtitle">A quick starting point for the details guests reach for most often.</p>
-          </div>
-        </div>
-
-        <div class="quick-grid">
-          <div class="card">
-            <a class="quick-link" href="#wifi">
-              <div class="icon-bubble">📶</div>
-              <div class="card-title">Wi-Fi</div>
-              <p>Everything you need to get connected in just a few taps.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#stay">
-              <div class="icon-bubble">🔑</div>
-              <div class="card-title">Stay Info</div>
-              <p>Arrival, departure, host help, and practical condo details.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#essentials">
-              <div class="icon-bubble">🏠</div>
-              <div class="card-title">Essentials</div>
-              <p>TV, sound, coffee, building highlights, and the basics guests reach for most.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="#emergency">
-              <div class="icon-bubble">🏥</div>
-              <div class="card-title">Emergency</div>
-              <p>Quick access to urgent numbers and nearby care options.</p>
-            </a>
-          </div>
-          <div class="card">
-            <a class="quick-link" href="recommendations.html">
-              <div class="icon-bubble">📍</div>
-              <div class="card-title">Neighborhood Guide</div>
-              <p>Dining, beach clubs, nightlife, and local favorites nearby.</p>
-            </a>
           </div>
         </div>
       </div>
@@ -228,24 +192,6 @@
             </div>
           </article>
 
-          <a class="callout-card callout-card-link" href="recommendations.html">
-            <span class="card-kicker">Neighborhood Guide</span>
-            <div class="card-title">Transportation And Deliveries</div>
-            <div class="rule-list" style="margin-top:0.85rem;">
-              <div class="rule-item">
-                <div class="rule-label">Uber and taxis</div>
-                <div class="meta">Both are easy to find nearby, and paying in pesos is usually the simplest option.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Food delivery</div>
-                <div class="meta">Uber Eats and Rappi are both good options for an easy night in.</div>
-              </div>
-              <div class="rule-item">
-                <div class="rule-label">Neighborhood guide</div>
-                <div class="meta">Open the full neighborhood guide for dining, beach clubs, nightlife, and nearby favorites.</div>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </section>
@@ -382,17 +328,33 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <nav class="floating-menu" aria-label="Quick section menu" data-floating-menu>
-    <a class="floating-primary back-to-top" href="#top" aria-label="Back to top" data-back-to-top>Top</a>
-    <a href="#quick-actions">Quick</a>
-    <a href="#wifi">Wi-Fi</a>
-    <a href="#stay">Stay</a>
-    <a href="#essentials">Essentials</a>
-    <a href="#emergency">Emergency</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <section class="section" id="guide">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Neighborhood Guide</span>
+              <h2 class="section-title">Explore Puerto Vallarta</h2>
+              <p>When you are ready to go beyond the condo, the neighborhood guide pulls together our favorite spots for dining, beach time, nightlife, and the practical details that make getting around easier.</p>
+              <ul class="list">
+                <li>Curated restaurant, beach, and nightlife picks</li>
+                <li>Transportation and food-delivery guidance</li>
+                <li>Local tips that help the area feel easier to navigate</li>
+              </ul>
+              <div class="actions-row" style="margin-top:0.85rem;">
+                <a class="btn btn-primary" href="recommendations.html">Open Neighborhood Guide</a>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-photo" style="background-image: linear-gradient(180deg, rgba(17, 33, 40, 0.05), rgba(17, 33, 40, 0.22) 44%, rgba(17, 33, 40, 0.58)), url('images/recommendations-hero.webp');" aria-label="Puerto Vallarta beach view"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <dialog id="qrDialog" aria-labelledby="qrTitle">
     <div class="modal-inner">
