@@ -29,7 +29,7 @@
           <details class="mobile-sections-menu">
             <summary>Secciones <span class="mobile-sections-chevron" aria-hidden="true">▾</span></summary>
             <div class="mobile-sections-list">
-              <a href="#wifi">Wi-Fi del Condominio</a>
+              <a href="#wifi">Wi-Fi</a>
               <a href="#stay">Información de la Estancia</a>
               <a href="#essentials">Esenciales</a>
               <a href="#emergency">Asistencia de Emergencia</a>
@@ -39,7 +39,7 @@
         </div>
         <nav class="nav-links" aria-label="Principal">
           <a href="#top">Inicio</a>
-          <a href="#wifi">Wi-Fi del Condominio</a>
+          <a href="#wifi">Wi-Fi</a>
           <a href="#stay">Información de la Estancia</a>
           <a href="#essentials">Esenciales</a>
           <a href="#emergency">Asistencia de Emergencia</a>
@@ -48,6 +48,7 @@
         <div class="language-picker" aria-label="Selector de idioma">
           <a class="language-option" href="index.html" lang="en">EN</a>
           <a class="language-option is-active" href="index-es.html" lang="es-MX">ES</a>
+          <a class="language-option" href="index-fr-ca.html" lang="fr-CA">FR</a>
         </div>
       </div>
     </div>
@@ -84,7 +85,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Wi-Fi del Condominio</h2>
+            <h2 class="section-title">Wi-Fi</h2>
             <p class="section-subtitle">Si apenas vas llegando, abre esto con datos celulares primero y conéctate una vez que estés dentro del condominio.</p>
           </div>
         </div>
@@ -92,6 +93,7 @@
         <div class="two-col">
           <article class="card">
             <span class="card-kicker">Red Privada del Condominio</span>
+            <p class="fineprint wifi-note">Ideal para usar dentro del condominio, incluyendo la sala, la recámara y tus dispositivos privados durante la estancia.</p>
             <div class="details-list">
               <div class="detail-item">
                 <div class="detail-label">Nombre de la red</div>
@@ -109,14 +111,22 @@
           </article>
 
           <article class="card card-soft">
-            <span class="card-kicker">Ayuda de Conexión</span>
-            <div class="card-title">La Forma Más Fácil de Conectarte</div>
-            <ul class="list">
-              <li>Abre esta página antes de llegar para tener a la mano los datos de la red.</li>
-              <li>Una vez dentro, conéctate a <strong>703 Pavilion WiFi</strong>.</li>
-              <li>Usa <strong>Copiar Contraseña</strong> si te conectas desde el mismo dispositivo.</li>
-              <li>Usa el código QR si un dispositivo está ayudando a otro a conectarse.</li>
-            </ul>
+            <span class="card-kicker">Wi-Fi del Edificio</span>
+            <p class="fineprint wifi-note">Ideal para las áreas comunes del edificio, como la azotea, la alberca y otros espacios compartidos cuando estés fuera del condominio.</p>
+            <div class="details-list">
+              <div class="detail-item">
+                <div class="detail-label">Nombre de la red</div>
+                <div class="value">Pavilion</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Contraseña</div>
+                <div class="value">1010101010</div>
+              </div>
+            </div>
+            <div class="actions-row wifi-actions">
+              <button class="btn btn-primary" id="copyBuildingPasswordBtn" type="button">Copiar Contraseña</button>
+              <button class="btn btn-secondary" id="showBuildingQrBtn" type="button">Mostrar QR de Wi-Fi</button>
+            </div>
           </article>
         </div>
       </div>
@@ -136,13 +146,16 @@
             <span class="card-kicker">Check-In</span>
             <div class="card-title">Llegada</div>
             <div class="value">3:00 PM</div>
-            <p class="fineprint">Una llegada tranquila empieza aquí, con tiempo suficiente para instalarte y disfrutar el condominio.</p>
+            <p class="fineprint">Una llegada tranquila empieza aquí, con tiempo suficiente para instalarte y disfrutar el condominio. También te pedimos revisar tu correo electrónico por si hubiera instrucciones específicas compartidas antes del check-in.</p>
           </article>
           <article class="card">
             <span class="card-kicker">Check-Out</span>
             <div class="card-title">Salida</div>
             <div class="value">11:00 AM</div>
-            <p class="fineprint">Salir antes de las 11:00 AM ayuda a que el siguiente huésped encuentre el condominio limpio y listo.</p>
+            <p class="fineprint">Salir antes de las 11:00 AM ayuda a que el siguiente huésped encuentre el condominio limpio y listo. También te pedimos revisar tu correo electrónico por si hubiera instrucciones específicas compartidas antes de tu salida.</p>
+            <div class="actions-row" style="margin-top:0.85rem;">
+              <button class="btn btn-secondary" id="showCheckoutBtn" type="button">Ver Procedimiento de Salida</button>
+            </div>
           </article>
           <article class="card">
             <span class="card-kicker">Visitas</span>
@@ -239,7 +252,7 @@
         <div class="two-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Edificio</span>
-            <div class="card-title">Azotea y Amenidades Comunes</div>
+            <div class="card-title">Edificio y Amenidades Compartidas</div>
             <ul class="list">
               <li>Alberca en la azotea, poco profunda, ideal para remojarse, refrescarse y pasar un rato relajado</li>
               <li>Muchas camastros, áreas con sombra y sillas cómodas para descansar</li>
@@ -247,6 +260,7 @@
               <li>Dos jacuzzis: uno de agua salada y otro con cloro tradicional</li>
               <li>Gimnasio pequeño pero suficiente</li>
               <li>Alberca de nado en el 5to piso con horarios publicados que pueden alternarse entre carriles y uso general</li>
+              <li>Hay Wi-Fi del edificio en las áreas comunes para conectarte fácilmente en la azotea y otros espacios compartidos</li>
             </ul>
           </article>
 
@@ -301,7 +315,7 @@
           <article class="card">
             <span class="card-kicker">Atención Cercana</span>
             <div class="card-title">Joya Medical Group</div>
-            <p class="fineprint">Clínica de urgencias de 24 horas, frecuentemente utilizada por viajeros en Zona Romántica.</p>
+            <p class="fineprint">Clínica de urgencias 24 horas justo cruzando la calle al salir por la entrada principal del edificio.</p>
             <div class="actions-row">
               <a class="action-link action-link-primary" href="https://maps.google.com/?q=Joya+Medical+Group+Puerto+Vallarta" target="_blank" rel="noopener noreferrer" title="Abrir en Google Maps" aria-label="Abrir en Google Maps">Abrir en Google Maps</a>
               <a class="action-link action-link-phone" href="tel:+523226887334" title="Llamar a Joya" aria-label="Llamar a Joya">Llamar a Joya</a>
@@ -368,7 +382,37 @@
       <div class="qr-wrap">
         <div id="wifiQr" aria-label="Wi-Fi QR code"></div>
       </div>
-      <p class="small">Red: <strong>703 Pavilion WiFi</strong><br />Contraseña: <strong>Pv703!Thx4Staying</strong></p>
+      <p class="small" id="qrNetworkInfo">Red: <strong>703 Pavilion WiFi</strong><br />Contraseña: <strong>Pv703!Thx4Staying</strong></p>
+    </div>
+  </dialog>
+
+  <dialog id="checkoutDialog" aria-labelledby="checkoutTitle">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div>
+          <div class="card-title" id="checkoutTitle">Procedimiento de Salida</div>
+          <p class="small">Un recordatorio rápido para que la salida sea sencilla.</p>
+        </div>
+        <button class="close-btn" id="closeCheckoutBtn" type="button" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="rule-list">
+        <div class="rule-item">
+          <div class="rule-label">Revisa tu correo</div>
+          <div class="meta">Por favor revisa cualquier instrucción específica de salida que se haya compartido antes de partir.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Apaga todo</div>
+          <div class="meta">Apaga los aires acondicionados y cualquier otro aparato eléctrico antes de salir.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Recepción</div>
+          <div class="meta">Devuelve las pulseras en recepción al salir.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Mensaje rápido</div>
+          <div class="meta">Envíanos un mensaje breve para confirmar tu salida.</div>
+        </div>
+      </div>
     </div>
   </dialog>
 
@@ -377,19 +421,32 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script src="site.js"></script>
   <script>
-    const wifi = {
-      ssid: '703 Pavilion WiFi',
-      password: 'Pv703!Thx4Staying',
-      qr: 'WIFI:T:WPA;S:703 Pavilion WiFi;P:Pv703!Thx4Staying;;'
+    const wifiConfigs = {
+      condo: {
+        ssid: '703 Pavilion WiFi',
+        password: 'Pv703!Thx4Staying',
+        qr: 'WIFI:T:WPA;S:703 Pavilion WiFi;P:Pv703!Thx4Staying;;'
+      },
+      building: {
+        ssid: 'Pavilion',
+        password: '1010101010',
+        qr: 'WIFI:T:WPA;S:Pavilion;P:1010101010;;'
+      }
     };
 
     const copyPasswordBtn = document.getElementById('copyPasswordBtn');
     const showQrBtn = document.getElementById('showQrBtn');
+    const copyBuildingPasswordBtn = document.getElementById('copyBuildingPasswordBtn');
+    const showBuildingQrBtn = document.getElementById('showBuildingQrBtn');
+    const showCheckoutBtn = document.getElementById('showCheckoutBtn');
     const closeQrBtn = document.getElementById('closeQrBtn');
+    const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
     const qrDialog = document.getElementById('qrDialog');
+    const checkoutDialog = document.getElementById('checkoutDialog');
     const qrTarget = document.getElementById('wifiQr');
+    const qrNetworkInfo = document.getElementById('qrNetworkInfo');
     const toast = document.getElementById('toast');
-    let qrRendered = false;
+    let qrInstance = null;
 
     function showToast(message) {
       toast.textContent = message;
@@ -400,7 +457,7 @@
       }, 2400);
     }
 
-    async function copyPassword() {
+    async function copyPassword(wifi) {
       try {
         await navigator.clipboard.writeText(wifi.password);
       } catch (error) {
@@ -414,22 +471,27 @@
       showToast('Contraseña de Wi-Fi copiada');
     }
 
-    function openQr() {
-      if (!qrRendered && window.QRCode) {
-        new QRCode(qrTarget, {
+    function openQr(wifi) {
+      qrTarget.innerHTML = '';
+      qrNetworkInfo.innerHTML = `Red: <strong>${wifi.ssid}</strong><br />Contraseña: <strong>${wifi.password}</strong>`;
+      if (window.QRCode) {
+        qrInstance = new QRCode(qrTarget, {
           text: wifi.qr,
           width: 220,
           height: 220,
           correctLevel: QRCode.CorrectLevel.M
         });
-        qrRendered = true;
       }
       qrDialog.showModal();
     }
 
-    copyPasswordBtn.addEventListener('click', copyPassword);
-    showQrBtn.addEventListener('click', openQr);
+    copyPasswordBtn.addEventListener('click', () => copyPassword(wifiConfigs.condo));
+    showQrBtn.addEventListener('click', () => openQr(wifiConfigs.condo));
+    copyBuildingPasswordBtn.addEventListener('click', () => copyPassword(wifiConfigs.building));
+    showBuildingQrBtn.addEventListener('click', () => openQr(wifiConfigs.building));
+    showCheckoutBtn.addEventListener('click', () => checkoutDialog.showModal());
     closeQrBtn.addEventListener('click', () => qrDialog.close());
+    closeCheckoutBtn.addEventListener('click', () => checkoutDialog.close());
 
     qrDialog.addEventListener('click', (event) => {
       const rect = qrDialog.getBoundingClientRect();
@@ -438,6 +500,15 @@
         rect.left <= event.clientX && event.clientX <= rect.left + rect.width
       );
       if (!clickedInDialog) qrDialog.close();
+    });
+
+    checkoutDialog.addEventListener('click', (event) => {
+      const rect = checkoutDialog.getBoundingClientRect();
+      const clickedInDialog = (
+        rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width
+      );
+      if (!clickedInDialog) checkoutDialog.close();
     });
   </script>
 </body>

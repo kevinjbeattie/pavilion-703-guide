@@ -1,9 +1,17 @@
 (function () {
   const body = document.body;
-  const isSpanish = document.documentElement.lang.toLowerCase().startsWith('es');
+  const lang = document.documentElement.lang.toLowerCase();
+  const isSpanish = lang.startsWith('es');
+  const isFrench = lang.startsWith('fr');
   const quickPicksRoot = document.querySelector('[data-quick-picks]');
   const recommendationSectionsRoot = document.querySelector('[data-recommendation-sections]');
   const photoCarousels = Array.from(document.querySelectorAll('[data-carousel-images]'));
+
+  function t(options) {
+    if (isSpanish) return options.es;
+    if (isFrench) return options.fr;
+    return options.en;
+  }
 
   function updateScrollEffects() {
     const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
@@ -25,15 +33,18 @@
     if (!url) return '';
 
     const isPrimary = kind === 'maps';
-    const labels = isSpanish
-      ? {
-          maps: 'Abrir en Google Maps',
-          website: 'Abrir sitio web'
-        }
-      : {
-          maps: 'Open in Google Maps',
-          website: 'Open website'
-        };
+    const labels = {
+      maps: t({
+        en: 'Open in Google Maps',
+        es: 'Abrir en Google Maps',
+        fr: 'Ouvrir dans Google Maps'
+      }),
+      website: t({
+        en: 'Open website',
+        es: 'Abrir sitio web',
+        fr: 'Ouvrir le site web'
+      })
+    };
     const label = isPrimary ? labels.maps : labels.website;
 
     return '<a class="action-link ' + (isPrimary ? 'action-link-primary' : 'action-link-secondary') + '" href="' +
@@ -85,11 +96,15 @@
 
   function renderRecommendationCard(item) {
     const phoneMarkup = item.phone
-      ? '<div class="recommendation-meta"><span class="meta-label">Phone</span><a class="inline-link" href="tel:' +
+      ? '<div class="recommendation-meta"><span class="meta-label">' + t({ en: 'Phone', es: 'Phone', fr: 'Téléphone' }) + '</span><a class="inline-link" href="tel:' +
         escapeHtml(item.phone.replace(/[^\d+]/g, '')) + '">' + escapeHtml(item.phone) + '</a></div>'
       : '';
 
-    const websiteLabel = getHostnameLabel(item.websiteUrl) || (isSpanish ? 'Sitio web' : 'Website');
+    const websiteLabel = getHostnameLabel(item.websiteUrl) || t({
+      en: 'Website',
+      es: 'Sitio web',
+      fr: 'Site web'
+    });
 
     return '<article class="card recommendation-card">' +
       '<span class="badge">' + escapeHtml(((item.badgeIcon || '') + ' ' + (item.badge || item.category)).trim()) + '</span>' +
@@ -184,7 +199,11 @@
       const dot = document.createElement('button');
       dot.type = 'button';
       dot.className = 'carousel-dot' + (index === 0 ? ' is-active' : '');
-      dot.setAttribute('aria-label', (isSpanish ? 'Mostrar foto del condominio ' : 'Show condo photo ') + (index + 1));
+      dot.setAttribute('aria-label', t({
+        en: 'Show condo photo ',
+        es: 'Mostrar foto del condominio ',
+        fr: 'Afficher la photo du condo '
+      }) + (index + 1));
       dot.addEventListener('click', () => {
         showSlide(index);
       });

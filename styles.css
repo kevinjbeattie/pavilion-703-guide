@@ -38,12 +38,12 @@ body.page-shell::before {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(180deg, rgba(243, 248, 249, 0.70), rgba(229, 240, 242, 0.88)),
+    linear-gradient(180deg, rgba(243, 248, 249, 0.50), rgba(229, 240, 242, 0.68)),
     var(--photo-image, radial-gradient(circle at top, rgba(58, 142, 167, 0.15), transparent 40%));
   background-size: cover;
   background-position: center var(--bg-focus-y);
-  filter: blur(10px) saturate(0.92);
-  transform: scale(1.08);
+  filter: blur(6px) saturate(1.08) contrast(1.02);
+  transform: scale(1.04);
 }
 
 body.page-shell::after {
@@ -52,8 +52,8 @@ body.page-shell::after {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(243, 248, 249, 0.72)),
-    radial-gradient(circle at top right, rgba(169, 191, 75, 0.12), transparent 24%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(243, 248, 249, 0.46)),
+    radial-gradient(circle at top right, rgba(169, 191, 75, 0.14), transparent 26%);
 }
 
 body.has-photo-background {
@@ -780,6 +780,11 @@ h1 {
 .wifi-actions {
   margin-top: 0.95rem;
   gap: 0.65rem;
+}
+
+.wifi-note {
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .wifi-actions .btn {
