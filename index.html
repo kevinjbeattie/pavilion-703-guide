@@ -29,7 +29,7 @@
           <details class="mobile-sections-menu">
             <summary>Sections <span class="mobile-sections-chevron" aria-hidden="true">▾</span></summary>
             <div class="mobile-sections-list">
-              <a href="#wifi">Condo Wi-Fi</a>
+              <a href="#wifi">Wi-Fi</a>
               <a href="#stay">Stay Information</a>
               <a href="#essentials">Essentials</a>
               <a href="#emergency">Emergency Assistance</a>
@@ -39,7 +39,7 @@
         </div>
         <nav class="nav-links" aria-label="Primary">
           <a href="#top">Home</a>
-          <a href="#wifi">Condo Wi-Fi</a>
+          <a href="#wifi">Wi-Fi</a>
           <a href="#stay">Stay Information</a>
           <a href="#essentials">Essentials</a>
           <a href="#emergency">Emergency Assistance</a>
@@ -48,6 +48,7 @@
         <div class="language-picker" aria-label="Language picker">
           <a class="language-option is-active" href="index.html" lang="en">EN</a>
           <a class="language-option" href="index-es.html" lang="es-MX">ES</a>
+          <a class="language-option" href="index-fr-ca.html" lang="fr-CA">FR</a>
         </div>
       </div>
     </div>
@@ -84,7 +85,7 @@
       <div class="container">
         <div class="section-header">
           <div>
-            <h2 class="section-title">Condo Wi-Fi</h2>
+            <h2 class="section-title">Wi-Fi</h2>
             <p class="section-subtitle">If you are just arriving, open this on cellular first, then connect once you are inside the condo.</p>
           </div>
         </div>
@@ -92,6 +93,7 @@
         <div class="two-col">
           <article class="card">
             <span class="card-kicker">Private Condo Network</span>
+            <p class="fineprint wifi-note">Best for inside the condo, including the living room, bedroom, and your private in-unit devices during the stay.</p>
             <div class="details-list">
               <div class="detail-item">
                 <div class="detail-label">Network name</div>
@@ -109,14 +111,22 @@
           </article>
 
           <article class="card card-soft">
-            <span class="card-kicker">Connection Help</span>
-            <div class="card-title">Fastest Way To Connect</div>
-            <ul class="list">
-              <li>Open this page before you arrive so the network details are easy to access.</li>
-              <li>Once inside, connect to <strong>703 Pavilion WiFi</strong>.</li>
-              <li>Use <strong>Copy Password</strong> if you are connecting from the same device.</li>
-              <li>Use the QR code if one device is helping another join the network.</li>
-            </ul>
+            <span class="card-kicker">Building Wi-Fi</span>
+            <p class="fineprint wifi-note">Best for shared building spaces like the rooftop, pool, and other common areas when you are away from the condo itself.</p>
+            <div class="details-list">
+              <div class="detail-item">
+                <div class="detail-label">Network name</div>
+                <div class="value">Pavilion</div>
+              </div>
+              <div class="detail-item">
+                <div class="detail-label">Password</div>
+                <div class="value">1010101010</div>
+              </div>
+            </div>
+            <div class="actions-row wifi-actions">
+              <button class="btn btn-primary" id="copyBuildingPasswordBtn" type="button">Copy Password</button>
+              <button class="btn btn-secondary" id="showBuildingQrBtn" type="button">Show Wi-Fi QR</button>
+            </div>
           </article>
         </div>
       </div>
@@ -136,13 +146,16 @@
             <span class="card-kicker">Check-In</span>
             <div class="card-title">Arrival</div>
             <div class="value">3:00 PM</div>
-            <p class="fineprint">A relaxed arrival starts here, with time to get settled and enjoy the condo.</p>
+            <p class="fineprint">A relaxed arrival starts here, with time to get settled and enjoy the condo. Please also check your email for any specific arrival instructions shared before check-in.</p>
           </article>
           <article class="card">
             <span class="card-kicker">Check-Out</span>
             <div class="card-title">Departure</div>
             <div class="value">11:00 AM</div>
-            <p class="fineprint">Leaving by 11:00 AM helps the next guest arrive to a clean, ready condo.</p>
+            <p class="fineprint">Leaving by 11:00 AM helps the next guest arrive to a clean, ready condo. Please check your email for any specific checkout instructions shared before departure.</p>
+            <div class="actions-row" style="margin-top:0.85rem;">
+              <button class="btn btn-secondary" id="showCheckoutBtn" type="button">View Checkout Procedure</button>
+            </div>
           </article>
           <article class="card">
             <span class="card-kicker">Visitors</span>
@@ -239,7 +252,7 @@
         <div class="two-col" style="margin-top:1rem;">
           <article class="card">
             <span class="card-kicker">Building</span>
-            <div class="card-title">Rooftop And Shared Amenities</div>
+            <div class="card-title">Building, Shared Amenities</div>
             <ul class="list">
               <li>Rooftop pool that is shallow and best for soaking, cooling off, and relaxed family time</li>
               <li>Plenty of loungers, shaded seating areas, and comfortable chairs</li>
@@ -247,6 +260,7 @@
               <li>Two jacuzzis: one saltwater and one standard chlorine</li>
               <li>Small but very usable gym</li>
               <li>5th-floor lap pool with posted hours that may alternate between lap swimming and general use</li>
+              <li>Building Wi-Fi is available in the common spaces for easy connectivity around the rooftop and shared areas</li>
             </ul>
           </article>
 
@@ -301,7 +315,7 @@
           <article class="card">
             <span class="card-kicker">Nearby Care</span>
             <div class="card-title">Joya Medical Group</div>
-            <p class="fineprint">24-hour walk-in emergency clinic often used by travelers in Zona Romantica.</p>
+            <p class="fineprint">24-hour walk-in emergency clinic directly across the street when you walk out the front door of the building.</p>
             <div class="actions-row">
               <a class="action-link action-link-primary" href="https://maps.google.com/?q=Joya+Medical+Group+Puerto+Vallarta" target="_blank" rel="noopener noreferrer" title="Open in Google Maps / Abrir en Google Maps" aria-label="Open in Google Maps / Abrir en Google Maps">Open in Google Maps / Abrir en Google Maps</a>
               <a class="action-link action-link-phone" href="tel:+523226887334" title="Call Joya / Llamar a Joya" aria-label="Call Joya / Llamar a Joya">Call Joya / Llamar a Joya</a>
@@ -368,7 +382,37 @@
       <div class="qr-wrap">
         <div id="wifiQr" aria-label="Wi-Fi QR code"></div>
       </div>
-      <p class="small">Network: <strong>703 Pavilion WiFi</strong><br />Password: <strong>Pv703!Thx4Staying</strong></p>
+      <p class="small" id="qrNetworkInfo">Network: <strong>703 Pavilion WiFi</strong><br />Password: <strong>Pv703!Thx4Staying</strong></p>
+    </div>
+  </dialog>
+
+  <dialog id="checkoutDialog" aria-labelledby="checkoutTitle">
+    <div class="modal-inner">
+      <div class="modal-header">
+        <div>
+          <div class="card-title" id="checkoutTitle">Checkout Procedure</div>
+          <p class="small">A quick reminder for a smooth departure.</p>
+        </div>
+        <button class="close-btn" id="closeCheckoutBtn" type="button" aria-label="Close">✕</button>
+      </div>
+      <div class="rule-list">
+        <div class="rule-item">
+          <div class="rule-label">Check your email</div>
+          <div class="meta">Please review any specific checkout instructions shared before departure.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Turn everything off</div>
+          <div class="meta">Turn off air conditioners and all other electronics before you head out.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Front desk</div>
+          <div class="meta">Return the bracelets at the front desk when you leave.</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-label">Quick message</div>
+          <div class="meta">Send us a quick message here to confirm your departure.</div>
+        </div>
+      </div>
     </div>
   </dialog>
 
@@ -377,19 +421,32 @@
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script src="site.js"></script>
   <script>
-    const wifi = {
-      ssid: '703 Pavilion WiFi',
-      password: 'Pv703!Thx4Staying',
-      qr: 'WIFI:T:WPA;S:703 Pavilion WiFi;P:Pv703!Thx4Staying;;'
+    const wifiConfigs = {
+      condo: {
+        ssid: '703 Pavilion WiFi',
+        password: 'Pv703!Thx4Staying',
+        qr: 'WIFI:T:WPA;S:703 Pavilion WiFi;P:Pv703!Thx4Staying;;'
+      },
+      building: {
+        ssid: 'Pavilion',
+        password: '1010101010',
+        qr: 'WIFI:T:WPA;S:Pavilion;P:1010101010;;'
+      }
     };
 
     const copyPasswordBtn = document.getElementById('copyPasswordBtn');
     const showQrBtn = document.getElementById('showQrBtn');
+    const copyBuildingPasswordBtn = document.getElementById('copyBuildingPasswordBtn');
+    const showBuildingQrBtn = document.getElementById('showBuildingQrBtn');
+    const showCheckoutBtn = document.getElementById('showCheckoutBtn');
     const closeQrBtn = document.getElementById('closeQrBtn');
+    const closeCheckoutBtn = document.getElementById('closeCheckoutBtn');
     const qrDialog = document.getElementById('qrDialog');
+    const checkoutDialog = document.getElementById('checkoutDialog');
     const qrTarget = document.getElementById('wifiQr');
+    const qrNetworkInfo = document.getElementById('qrNetworkInfo');
     const toast = document.getElementById('toast');
-    let qrRendered = false;
+    let qrInstance = null;
 
     function showToast(message) {
       toast.textContent = message;
@@ -400,7 +457,7 @@
       }, 2400);
     }
 
-    async function copyPassword() {
+    async function copyPassword(wifi) {
       try {
         await navigator.clipboard.writeText(wifi.password);
       } catch (error) {
@@ -414,22 +471,27 @@
       showToast('Wi-Fi password copied');
     }
 
-    function openQr() {
-      if (!qrRendered && window.QRCode) {
-        new QRCode(qrTarget, {
+    function openQr(wifi) {
+      qrTarget.innerHTML = '';
+      qrNetworkInfo.innerHTML = `Network: <strong>${wifi.ssid}</strong><br />Password: <strong>${wifi.password}</strong>`;
+      if (window.QRCode) {
+        qrInstance = new QRCode(qrTarget, {
           text: wifi.qr,
           width: 220,
           height: 220,
           correctLevel: QRCode.CorrectLevel.M
         });
-        qrRendered = true;
       }
       qrDialog.showModal();
     }
 
-    copyPasswordBtn.addEventListener('click', copyPassword);
-    showQrBtn.addEventListener('click', openQr);
+    copyPasswordBtn.addEventListener('click', () => copyPassword(wifiConfigs.condo));
+    showQrBtn.addEventListener('click', () => openQr(wifiConfigs.condo));
+    copyBuildingPasswordBtn.addEventListener('click', () => copyPassword(wifiConfigs.building));
+    showBuildingQrBtn.addEventListener('click', () => openQr(wifiConfigs.building));
+    showCheckoutBtn.addEventListener('click', () => checkoutDialog.showModal());
     closeQrBtn.addEventListener('click', () => qrDialog.close());
+    closeCheckoutBtn.addEventListener('click', () => checkoutDialog.close());
 
     qrDialog.addEventListener('click', (event) => {
       const rect = qrDialog.getBoundingClientRect();
@@ -438,6 +500,15 @@
         rect.left <= event.clientX && event.clientX <= rect.left + rect.width
       );
       if (!clickedInDialog) qrDialog.close();
+    });
+
+    checkoutDialog.addEventListener('click', (event) => {
+      const rect = checkoutDialog.getBoundingClientRect();
+      const clickedInDialog = (
+        rect.top <= event.clientY && event.clientY <= rect.top + rect.height &&
+        rect.left <= event.clientX && event.clientX <= rect.left + rect.width
+      );
+      if (!clickedInDialog) checkoutDialog.close();
     });
   </script>
 </body>
